@@ -309,7 +309,7 @@ const bgi = k => `background-image:var(${IMGV[k]})`;
 const PROJECTS = [
   {slug:'serene-teak-cove-residence', cat:'turnkey', catLabel:'Full-home turnkey', img:'living', title:'The Serene Teak & Cove Residence',
    loc:'Bengaluru', year:'2026', area:'—', dur:'—', scope:'Wardrobes, living-room panelling, modular kitchen, false-ceiling cove lighting, exterior elevation, blinds and handover cleaning',
-   mats:['Fluted teak-finish laminate','Rohini 1.1 plywood','Mahalaxmi laminates','Bhavani soft-close hardware','Gypsum cove ceiling · 2700K LED'],
+   mats:['Fluted teak-finish laminate','1.1 plywood','Laminates','Soft-close hardware','Gypsum cove ceiling · 2700K LED'],
    sum:'A move-in-ready home where warm fluted timber, a layered cove ceiling and soft daylight set the tone.',
    brief:'Deliver a complete, move-in-ready residential interior covering custom wardrobes, living-room panelling, a modular kitchen, false-ceiling cove lighting, exterior elevation works, blinds and a handover clean.',
    appr:'Work was sequenced as weekly site milestones, with factory-finished panels and joinery installed by a dedicated carpentry team. Materials are specified by name in the contract.'},
@@ -335,21 +335,21 @@ const PROJECTS = [
 const PALETTES = [
   {id:'warmth', tag:'Palette 01 · Signature Warmth', name:'Burmese Teak, Cashmere & Travertine', rate:'₹1,650 / sq.ft', tier:'signature',
    story:'The studio’s most requested residential palette: vertical fluted timber grounds the room while matte cashmere shutters reflect daylight without fingerprints.',
-   core:'Rohini 1.1 BWP / BWR plywood', surf:'Mahalaxmi 1 mm fluted teak & matte cashmere', hw:'Bhavani soft-close · brushed champagne brass',
+   core:'1.1 BWP / BWR plywood', surf:'1 mm fluted teak & matte cashmere', hw:'Soft-close · brushed champagne brass',
    sw:[['Fluted Teak','#7A5230'],['Warm Cashmere','#E5DEC9'],['Raw Travertine','#D2C5B0'],['Aged Brass','#C29B53']]},
   {id:'walnut', tag:'Palette 02 · Executive Modern', name:'Smoked Walnut, Fluted Bronze & Quartz', rate:'₹2,100 / sq.ft', tier:'bespoke',
    story:'For statement islands and walk-in wardrobes: deep smoked walnut meets tinted bronze glass and seamless white quartz.',
-   core:'Rohini 1.1 marine ply + HDHMR shutters', surf:'Natural walnut veneer + PU matte coat', hw:'Bhavani concealed channels · matte bronze',
+   core:'1.1 marine ply + HDHMR shutters', surf:'Natural walnut veneer + PU matte coat', hw:'Concealed channels · matte bronze',
    sw:[['Smoked Walnut','#4A3222'],['Bronze Glass','#2C2623'],['Calacatta Quartz','#F4F1EA'],['Champagne Gold','#B8924A']]},
   {id:'coastal', tag:'Palette 03 · Coastal Heritage', name:'Natural Rattan, White Oak & Limestone', rate:'₹1,450 / sq.ft', tier:'essential',
    story:'A breathable tropical-modern palette for coastal Karnataka: moisture-resistant ply, woven cane inserts and cool limestone tones.',
-   core:'Moisture-resistant BWR commercial & marine ply', surf:'Mahalaxmi white-oak texture + woven cane', hw:'Bhavani SS-304 rust-proof hinges',
+   core:'Moisture-resistant BWR commercial & marine ply', surf:'White-oak texture + woven cane', hw:'SS-304 rust-proof hinges',
    sw:[['White Oak','#B89972'],['Woven Rattan','#D8C098'],['Sage Linen','#6E7E6F'],['Limestone Ivory','#F2EFE9']]}
 ];
 const HOTSPOTS = [
   {k:'cove', x:48, y:14, t:'Recessed gypsum cove ceiling', d:'A multi-tier moisture-resistant gypsum ceiling with concealed 2700K LED channels that remove glare and frame the living zone.', m:'Moisture-resistant gypsum board + warm COB strip', c:'₹22,000 – ₹42,000'},
-  {k:'pan', x:16, y:46, t:'Fluted timber panelling', d:'Vertical grooved battens over calibrated plywood, factory-pressed laminate for acoustic warmth and a crisp shadow line.', m:'Rohini 1.1 plywood + Mahalaxmi laminate', c:'Factory-fabricated; priced per sq.ft'},
-  {k:'joi', x:52, y:63, t:'Bespoke carpentry & joinery', d:'Built by a dedicated carpentry team across weekly site milestones, finished with soft-close architectural hardware.', m:'Master carpentry + Bhavani hardware', c:'Scope-based'},
+  {k:'pan', x:16, y:46, t:'Fluted timber panelling', d:'Vertical grooved battens over calibrated plywood, factory-pressed laminate for acoustic warmth and a crisp shadow line.', m:'1.1 plywood + laminate', c:'Factory-fabricated; priced per sq.ft'},
+  {k:'joi', x:52, y:63, t:'Bespoke carpentry & joinery', d:'Built by a dedicated carpentry team across weekly site milestones, finished with soft-close architectural hardware.', m:'Master carpentry + hardware', c:'Scope-based'},
   {k:'bld', x:82, y:42, t:'Tailored blinds & handover', d:'Floor-to-ceiling blinds filter harsh afternoon sun into a soft wash, followed by a deep clean before handover.', m:'Custom window treatments + deep clean', c:'₹15,000 + ₹9,500 (source ledger)'}
 ];
 const LIGHT = {
@@ -427,7 +427,7 @@ function palPanel(p){
    <p class="s-lead" style="max-width:60ch">${esc(p.story)}</p>
    <div class="s-swatches">${p.sw.map(([n,h])=>`<figure><i style="background:${h}"></i><figcaption>${n}<br><span class="mono" style="font-size:11px">${h}</span></figcaption></figure>`).join('')}</div>
    <dl class="s-spec"><div><dt>Core</dt><dd>${F(esc(p.core))}</dd></div><div><dt>Surface</dt><dd>${F(esc(p.surf))}</dd></div><div><dt>Hardware</dt><dd>${F(esc(p.hw))}</dd></div></dl>
-   <div class="row" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center"><span><b>Indicative woodwork rate</b> ${F(esc(p.rate))}</span><button class="s-btn" type="button" data-act="apply-pal" data-tier="${p.tier}">Apply to estimate ${ICON.arrow}</button><button class="s-btn gh" type="button" data-act="modal-sample">Request sample boards</button></div></div>`;
+   <div class="row" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center"><button class="s-btn" type="button" data-act="apply-pal" data-tier="${p.tier}">Apply to estimate ${ICON.arrow}</button><button class="s-btn gh" type="button" data-act="modal-sample">Request sample boards</button></div></div>`;
 }
 function vizDetail(h, i){
   return `<span class="s-eyebrow">Detail ${i+1} of ${HOTSPOTS.length}</span><h3>${esc(h.t)}</h3><p style="color:#D4CBBB">${esc(h.d)}</p>
