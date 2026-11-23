@@ -395,7 +395,7 @@ const CITIES = ['Bengaluru','Mysuru','Mangaluru / Puttur / Dakshina Kannada','Ot
 
 function logo(){ return `<a class="s-logo" href="#" data-act="route" data-route="/" aria-label="CASARIO — home"><i aria-hidden="true">C</i><span><b>CASARIO</b><small>Interiors &amp; Architecture</small></span></a>`; }
 function header(){
-  return `<div class="s-util"><div class="s-wrap"><span>Founder-led interior design · ${F('Bengaluru · Mysuru · Dakshina Kannada')}</span><span class="hide-m"><a href="tel:+918277100844">${F('+91 82771 00844')}</a></span></div></div>
+  return `<div class="s-util"><div class="s-wrap"><span>Founder-led interior design · ${F('Bengaluru · Mysuru · Dakshina Kannada')}</span><span class="hide-m"><a href="tel:+919187061962">${F('+91 91870 61962')}</a></span></div></div>
   <header class="s-header"><div class="s-wrap">${logo()}
   <nav class="s-nav" aria-label="Primary">${NAV.map(([k,l])=>`<a href="#" data-act="go" data-sec="${k}">${l}</a>`).join('')}</nav>
   <a class="s-btn s-hcta" href="#" data-act="go" data-sec="contact">Book a consultation</a>
@@ -404,8 +404,8 @@ function header(){
 function overlays(){
   return `<div class="s-drawer dk" data-ov="drawer" role="dialog" aria-modal="true" aria-label="Site menu" data-open="false"><div class="top">${logo()}<button class="s-x" type="button" data-act="menu-close" aria-label="Close menu">✕</button></div>
    <nav aria-label="Mobile">${NAV.map(([k,l])=>`<a href="#" data-act="go" data-sec="${k}">${l}<span aria-hidden="true">${ICON.arrow}</span></a>`).join('')}<a href="#" data-act="route" data-route="/about">About<span aria-hidden="true">${ICON.arrow}</span></a></nav>
-   <div class="meta"><a class="s-btn" href="#" data-act="go" data-sec="contact">Book a consultation</a><a href="tel:+918277100844" style="color:#fff">${F('+91 82771 00844')}</a><span>${F('Bengaluru · Mysuru · Dakshina Kannada')}</span></div></div>
-  <div class="s-bar" data-ov="bar"><a href="tel:+918277100844">Call</a><a href="https://wa.me/918277100844" target="_blank" rel="noopener">WhatsApp</a><a class="pri" href="#" data-act="go" data-sec="contact">Book consult</a></div>
+   <div class="meta"><a class="s-btn" href="#" data-act="go" data-sec="contact">Book a consultation</a><a href="tel:+919187061962" style="color:#fff">${F('+91 91870 61962')}</a><span>${F('Bengaluru · Mysuru · Dakshina Kannada')}</span></div></div>
+  <div class="s-bar" data-ov="bar"><a href="tel:+919187061962">Call</a><a href="https://wa.me/919187061962" target="_blank" rel="noopener">WhatsApp</a><a class="pri" href="#" data-act="go" data-sec="contact">Book consult</a></div>
   <div class="s-modal" data-ov="modal" hidden><div class="s-mbox" role="dialog" aria-modal="true" aria-labelledby="mt"><button class="s-mclose" type="button" data-act="modal-close" aria-label="Close dialog">✕</button><div data-ov="mbody"></div></div></div>
   <div class="s-toast" data-ov="toast" role="status" aria-live="polite" hidden></div>`;
 }
@@ -413,7 +413,7 @@ function footer(){
   return `<footer class="s-foot"><div class="s-wrap"><div class="grid4">
    <div><div class="s-logo" style="color:#fff"><i aria-hidden="true">C</i><span><b>CASARIO</b><small style="color:#B9B1A5">Interiors &amp; Architecture</small></span></div><p style="margin-top:16px;max-width:34ch">Founder-led interiors, planned in detail and built to be lived in.</p></div>
    <div><h4>Explore</h4><ul>${[['Work','/portfolio'],['Services','/services'],['Studio','/studio'],['Materials','/materials'],['Estimate','/estimate'],['About','/about']].map(([l,r])=>`<li><a href="#" data-act="route" data-route="${r}">${l}</a></li>`).join('')}</ul></div>
-   <div><h4>Contact</h4><ul><li><a href="tel:+918277100844">${F('+91 82771 00844')}</a></li><li><a href="#" data-act="route" data-route="/contact">${F('Email us')}</a></li><li><a href="#" data-act="route" data-route="/contact">Book a consultation</a></li></ul></div>
+   <div><h4>Contact</h4><ul><li><a href="tel:+919187061962">${F('+91 91870 61962')}</a></li><li><a href="#" data-act="route" data-route="/contact">${F('Email us')}</a></li><li><a href="#" data-act="route" data-route="/contact">Book a consultation</a></li></ul></div>
    <div><h4>Studio</h4><p>${F('Registered office: Ground Floor, 2-128 Shri Raksha, Renja Bettampady, Puttur Taluk, Dakshina Kannada 574259')}</p></div></div>
    <div class="legal"><span>${F('GSTIN 29ADPPN8090B1Z5 · SAC 998391 / 995473')}</span><span>© <span data-year></span> CASARIO Interior Design Studio · <a href="#" data-act="route" data-route="/privacy">Privacy</a> · Estimates are indicative and not a quotation.</span></div></div></footer>`;
 }
@@ -516,7 +516,7 @@ function homePage(){
    <div class="s-est">${estForm()}<div class="s-res" role="region" aria-label="Estimate result" aria-live="polite" data-part="estres"></div></div></div></section>
   <section class="s-sec lin rvonly"><div class="s-wrap"><div class="s-empty">Testimonials module intentionally hidden — shown only when at least one testimonial has <code>consent_recorded = true</code> and <code>published = true</code>. No testimonial is invented.</div></div></section>
   <section class="s-sec dk" data-sec="contact"><div class="s-wrap s-contact"><div><span class="s-eyebrow">Contact</span><h2 class="s-h2" style="margin:14px 0 22px">Let’s talk about your home.</h2><p class="s-lead">Tell us about the space and where you are in the process. A real person replies.</p>
-    <dl class="s-cd" style="margin-top:30px"><div><dt>Phone &amp; WhatsApp</dt><dd><a href="tel:+918277100844">${F('+91 82771 00844')}</a></dd></div><div><dt>Email</dt><dd>${F('Use the form below','Confirm')}</dd></div><div><dt>Service areas</dt><dd>${F('Bengaluru · Mysuru · Dakshina Kannada')}</dd></div></dl></div>
+    <dl class="s-cd" style="margin-top:30px"><div><dt>Phone &amp; WhatsApp</dt><dd><a href="tel:+919187061962">${F('+91 91870 61962')}</a></dd></div><div><dt>Email</dt><dd>${F('Use the form below','Confirm')}</dd></div><div><dt>Service areas</dt><dd>${F('Bengaluru · Mysuru · Dakshina Kannada')}</dd></div></dl></div>
     <div data-part="formwrap">${leadForm('%ID%')}</div></div></section>`;
 }
 /* ---------- portfolio + project pages ---------- */
@@ -628,10 +628,10 @@ function showForm(d, form, errs){
   $(sum,'.s-summary').focus();
 }
 function formState(d, wrap, state){
-  const form=$(wrap,'form'); if(state==='done'){ wrap.innerHTML=`<div class="s-ok" role="status" tabindex="-1"><h3>Thank you — we have your enquiry.</h3><p>Reference <b class="mono">CAS-2026-0001</b>. ${F('We will contact you within 24 hours','Confirm')} on the number you gave. If it is urgent, call <a href="tel:+918277100844">${F('+91 82771 00844')}</a>.</p><div><button class="s-btn gh" type="button" data-act="form-reset">Send another enquiry</button></div></div>`; $(wrap,'.s-ok').focus(); return; }
+  const form=$(wrap,'form'); if(state==='done'){ wrap.innerHTML=`<div class="s-ok" role="status" tabindex="-1"><h3>Thank you — we have your enquiry.</h3><p>Reference <b class="mono">CAS-2026-0001</b>. ${F('We will contact you within 24 hours','Confirm')} on the number you gave. If it is urgent, call <a href="tel:+919187061962">${F('+91 91870 61962')}</a>.</p><div><button class="s-btn gh" type="button" data-act="form-reset">Send another enquiry</button></div></div>`; $(wrap,'.s-ok').focus(); return; }
   if(!form) return; const sum=$(form,'[data-part=fsum]'); const btn=$(form,'button[type=submit]');
   btn.disabled = state==='submitting'; btn.firstChild.textContent = state==='submitting'?'Sending… ':'Send enquiry ';
-  if(state==='server'){ sum.innerHTML=`<div class="s-summary" role="alert" tabindex="-1"><b>We couldn’t save your enquiry.</b> Your details are still here — please try again, or call <a href="tel:+918277100844">${F('+91 82771 00844')}</a> / message us on WhatsApp.<div style="margin-top:10px"><button class="s-btn gh" type="button" data-act="form-retry">Try again</button></div></div>`; $(sum,'.s-summary').focus(); }
+  if(state==='server'){ sum.innerHTML=`<div class="s-summary" role="alert" tabindex="-1"><b>We couldn’t save your enquiry.</b> Your details are still here — please try again, or call <a href="tel:+919187061962">${F('+91 91870 61962')}</a> / message us on WhatsApp.<div style="margin-top:10px"><button class="s-btn gh" type="button" data-act="form-retry">Try again</button></div></div>`; $(sum,'.s-summary').focus(); }
 }
 function bindSite(d){
   d.addEventListener('click', e=>{
