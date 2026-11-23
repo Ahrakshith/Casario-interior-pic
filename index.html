@@ -369,10 +369,10 @@ const EST = {
     {k:'ext', label:'Exterior / foyer elevation', base:93475, tier:true},
     {k:'hand', label:'Blinds & handover deep-clean', base:24500, tier:false}
   ],
-  refArea:1650, gst:.18, band:.10, consultFee:8000
+  refArea:1650, gst:0, band:.10, consultFee:8000
 };
 function calcEstimate(s){
-  if(s.prop==='consult') return {consult:true, items:[{label:'Space plan, lighting blueprint & material boards', v:EST.consultFee/1.18}], sub:EST.consultFee/1.18, gst:EST.consultFee-EST.consultFee/1.18, total:EST.consultFee, lo:EST.consultFee, hi:EST.consultFee};
+  if(s.prop==='consult') return {consult:true, items:[{label:'Space plan, lighting blueprint & material boards', v:EST.consultFee}], sub:EST.consultFee, gst:0, total:EST.consultFee, lo:EST.consultFee, hi:EST.consultFee};
   const sc = s.area/EST.refArea, tm = EST.tiers[s.tier].m, items=[];
   EST.scopes.forEach(x=>{ if(s.scopes[x.k]) items.push({label:x.label, v:x.base*sc*(x.tier?tm:1)}); });
   if(!items.length) return {empty:true, items:[], sub:0, gst:0, total:0, lo:0, hi:0};
@@ -415,7 +415,7 @@ function footer(){
    <div><h4>Explore</h4><ul>${[['Work','/portfolio'],['Services','/services'],['Studio','/studio'],['Materials','/materials'],['Estimate','/estimate'],['About','/about']].map(([l,r])=>`<li><a href="#" data-act="route" data-route="${r}">${l}</a></li>`).join('')}</ul></div>
    <div><h4>Contact</h4><ul><li><a href="tel:+919187061962">${F('+91 91870 61962')}</a></li><li><a href="#" data-act="route" data-route="/contact">${F('Email us')}</a></li><li><a href="#" data-act="route" data-route="/contact">Book a consultation</a></li></ul></div>
    <div><h4>Studio</h4><p>${F('Registered office: Ground Floor, 2-128 Shri Raksha, Renja Bettampady, Puttur Taluk, Dakshina Kannada 574259')}</p></div></div>
-   <div class="legal"><span>${F('GSTIN 29ADPPN8090B1Z5 · SAC 998391 / 995473')}</span><span>© <span data-year></span> CASARIO Interior Design Studio · <a href="#" data-act="route" data-route="/privacy">Privacy</a> · Estimates are indicative and not a quotation.</span></div></div></footer>`;
+   <div class="legal"><span></span><span>© <span data-year></span> CASARIO Interior Design Studio · <a href="#" data-act="route" data-route="/privacy">Privacy</a> · Estimates are indicative and not a quotation.</span></div></div></footer>`;
 }
 function projectCard(p, i=0){
   return `<a class="s-card" href="#" data-act="open-project" data-slug="${p.slug}"><div class="ph-w"><div class="ph" style="${bgi(p.img)}" role="img" aria-label="${esc(p.title)} — photograph"></div></div>
@@ -447,9 +447,9 @@ function estForm(){
 function estResult(s){
   const r = calcEstimate(s);
   if(r.empty) return `<h3 class="s-h3">Select at least one scope</h3><p><small>Choose scope items to see an indicative range.</small></p>`;
-  const head = r.consult ? `<span class="s-eyebrow">Design consultation · fixed fee</span><div class="big">${INR(r.total)}</div><small>Incl. 18% GST </small>`
-   : `<span class="s-eyebrow">Indicative range incl. GST</span><div class="big">${INR(r.lo)} – ${INR(r.hi)}</div><small>Mid-point ${INR(r.total)} · range band ±${EST.band*100}%</small>`;
-  return `${head}<div class="lines">${r.items.map(i=>`<div><span>${i.label}</span><span>${INR(i.v)}</span></div>`).join('')}<div><span>GST 18%</span><span>${INR(r.gst)}</span></div></div>
+  const head = r.consult ? `<span class="s-eyebrow">Design consultation · fixed fee</span><div class="big">${INR(r.total)}</div><small>Fixed fee</small>`
+   : `<span class="s-eyebrow">Indicative range</span><div class="big">${INR(r.lo)} – ${INR(r.hi)}</div><small>Mid-point ${INR(r.total)} · range band ±${EST.band*100}%</small>`;
+  return `${head}<div class="lines">${r.items.map(i=>`<div><span>${i.label}</span><span>${INR(i.v)}</span></div>`).join('')}</div>
    <div><b style="font-size:13px">Assumptions &amp; exclusions</b><ul><li>Based on carpet area and the selected tier; final price follows a site measurement.</li><li>Appliances, civil work and loose furniture are listed separately in your written proposal.</li></ul></div>
    <small><b>Indicative only — not a quotation.</b> Calculated on our server.</small>
    <div style="display:grid;gap:10px"><button class="s-btn" type="button" data-act="est-discuss">Discuss this estimate ${ICON.arrow}</button><button class="s-btn gh" type="button" data-act="est-copy">Copy summary</button></div>`;
@@ -483,7 +483,7 @@ function homePage(){
     <div class="cap"><span class="flag" data-f="Placeholder image">Placeholder · rights &amp; provenance unconfirmed</span></div></div></div>
   <section class="s-trust" aria-label="Studio principles"><div class="s-wrap"><ul>
    <li>${ICON.user}<div><b>Founder-led</b><span>Led by ${F('Er. Rashmi A H, Principal Engineer &amp; Lead Designer')}</span></div></li>
-   <li>${ICON.list}<div><b>Itemised estimates</b><span>GST shown separately, scope by scope</span></div></li>
+   <li>${ICON.list}<div><b>Itemised estimates</b><span>Scope-by-scope line items</span></div></li>
    <li>${ICON.swatch}<div><b>Materials named in writing</b><span></span></div></li>
    <li>${ICON.shield}<div><b>Weekly site milestones</b><span></span></div></li></ul></div></section>
   <section class="s-sec" data-sec="work"><div class="s-wrap"><div class="s-head"><span class="s-eyebrow">Selected work</span><h2 class="s-h2">Rooms planned to the last detail.</h2><p class="s-lead">Real briefs, named materials and the decisions behind them. </p></div>
@@ -493,13 +493,13 @@ function homePage(){
    <div style="margin-top:44px"><a class="s-link" href="#" data-act="route" data-route="/portfolio">View the full portfolio ${ICON.arrow}</a></div></div></section>
   <section class="s-sec lin" data-sec="services"><div class="s-wrap"><div class="s-head"><span class="s-eyebrow">Services</span><h2 class="s-h2">Start small, or hand over the keys.</h2></div>
    <ol class="s-svc">
-    <li><span class="num">01</span><h3>Design &amp; space planning</h3><p>2D/3D layouts, lighting and electrical plan, and material boards — a low-risk way to begin.</p><span class="price">${F('₹8,000 incl. GST')}</span></li>
+    <li><span class="num">01</span><h3>Design &amp; space planning</h3><p>2D/3D layouts, lighting and electrical plan, and material boards — a low-risk way to begin.</p><span class="price">${F('₹8,000')}</span></li>
     <li><span class="num">02</span><h3>Modular kitchens &amp; wardrobes</h3><p>Factory-finished carpentry, soft-close hardware and a site team to install it properly.</p><span class="price">${F('From ₹1,00,000')}</span></li>
     <li><span class="num">03</span><h3>Full-home turnkey</h3><p>Carpentry, ceilings, lighting, elevation, blinds and handover clean under one contract.</p><span class="price">${F('₹7.25L – ₹11.2L+')}</span></li>
     <li><span class="num">04</span><h3>Executive &amp; office interiors</h3><p>Fit-outs for owner-run offices and executive suites.</p><span class="price">${F('On enquiry','Confirm')}</span></li></ol>
    <div style="margin-top:32px"><a class="s-link" href="#" data-act="route" data-route="/services">All services &amp; process ${ICON.arrow}</a></div></div></section>
   <section class="s-sec dk" data-sec="process"><div class="s-wrap"><div class="s-head"><span class="s-eyebrow">How we work</span><h2 class="s-h2">A clear path from first call to handover.</h2></div>
-   <ol class="s-steps"><li><h3>Consult</h3><p>One-to-one conversation, site visit and brief.</p></li><li><h3>Plan</h3><p>Space plan, lighting layout and moodboard.</p></li><li><h3>Specify &amp; quote</h3><p>Named materials and an itemised, GST-clear quotation.</p></li><li><h3>Build</h3><p>Weekly milestones, factory finish plus site craft.</p></li><li><h3>Handover</h3><p>Snagging, deep clean, move in. </p></li></ol></div></section>
+   <ol class="s-steps"><li><h3>Consult</h3><p>One-to-one conversation, site visit and brief.</p></li><li><h3>Plan</h3><p>Space plan, lighting layout and moodboard.</p></li><li><h3>Specify &amp; quote</h3><p>Named materials and an itemised quotation.</p></li><li><h3>Build</h3><p>Weekly milestones, factory finish plus site craft.</p></li><li><h3>Handover</h3><p>Snagging, deep clean, move in. </p></li></ol></div></section>
   <section class="s-sec"><div class="s-wrap" style="display:grid;gap:40px;align-items:center" data-sec="about" data-part="lead"><div class="s-img" style="${bgi('board')};aspect-ratio:16/10" role="img" aria-label="Material board with timber, stone, fabric swatches and floor plans"></div>
    <div style="display:grid;gap:18px"><span class="s-eyebrow">The studio</span><h2 class="s-h2">Engineering rigour, a designer’s eye.</h2><p class="s-lead">${F('Er. Rashmi A H leads every project personally — from the space plan to the site.','Confirm')}</p><div><a class="s-link" href="#" data-act="route" data-route="/about">Meet the studio ${ICON.arrow}</a></div></div></div></section>
   <section class="s-sec dk" data-sec="studio"><div class="s-wrap"><div class="s-head"><span class="s-eyebrow">Studio experience</span><h2 class="s-h2">Slide from blueprint to livable.</h2><p class="s-lead">Drag the slider or use the arrow keys. Switch the lighting and open each detail. <a href="#" data-act="route" data-route="/studio" style="color:var(--brassb)">Open the full studio</a></p></div>
@@ -608,7 +608,7 @@ function drawEst(d){
   const dis = e.prop==='consult'; d.querySelectorAll('[data-est=area],[data-est=areanum]').forEach(x=>{x.disabled=dis; x.value=e.area||1650;});
   d.querySelectorAll('[data-est=tier],[data-est=scope]').forEach(x=>x.disabled=dis);
 }
-function estSummary(e){ const r=calcEstimate(e); return r.consult? 'Design consultation (fixed fee ₹8,000 incl. GST)' : `Indicative estimate: ${EST.presets[e.prop].label}, ${e.area} sq.ft, ${EST.tiers[e.tier].label} — ${INR(r.lo)} to ${INR(r.hi)} incl. GST (indicative, not a quotation).`; }
+function estSummary(e){ const r=calcEstimate(e); return r.consult? 'Design consultation (fixed fee ₹8,000)' : `Indicative estimate: ${EST.presets[e.prop].label}, ${e.area} sq.ft, ${EST.tiers[e.tier].label} — ${INR(r.lo)} to ${INR(r.hi)} (indicative, not a quotation).`; }
 function validate(f){
   const v=n=>(f.elements[n].value||'').trim(), errs=[];
   if(v('name').length<2) errs.push(['name','Enter your full name (at least 2 characters).']);
