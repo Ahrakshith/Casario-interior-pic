@@ -414,7 +414,7 @@ function footer(){
    <div><div class="s-logo" style="color:#fff"><i aria-hidden="true">C</i><span><b>CASARIO</b><small style="color:#B9B1A5">Interiors &amp; Architecture</small></span></div><p style="margin-top:16px;max-width:34ch">Founder-led interiors, planned in detail and built to be lived in.</p></div>
    <div><h4>Explore</h4><ul>${[['Work','/portfolio'],['Services','/services'],['Studio','/studio'],['Materials','/materials'],['Estimate','/estimate'],['About','/about']].map(([l,r])=>`<li><a href="#" data-act="route" data-route="${r}">${l}</a></li>`).join('')}</ul></div>
    <div><h4>Contact</h4><ul><li><a href="tel:+919187061962">${F('+91 91870 61962')}</a></li><li><a href="#" data-act="route" data-route="/contact">${F('Email us')}</a></li><li><a href="#" data-act="route" data-route="/contact">Book a consultation</a></li></ul></div>
-   <div><h4>Studio</h4><p>${F('Registered office: Ground Floor, 2-128 Shri Raksha, Renja Bettampady, Puttur Taluk, Dakshina Kannada 574259')}</p></div></div>
+   </div>
    <div class="legal"><span></span><span>© <span data-year></span> CASARIO Interior Design Studio · <a href="#" data-act="route" data-route="/privacy">Privacy</a> · Estimates are indicative and not a quotation.</span></div></div></footer>`;
 }
 function projectCard(p, i=0){
