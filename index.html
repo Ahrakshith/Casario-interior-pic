@@ -19,6 +19,67 @@
 .rdots button[aria-pressed=true]::after{background:var(--brassb)}
 .reelbox .pz{z-index:3}
 @media (prefers-reduced-motion:reduce){.dev-scroll{scroll-behavior:auto}}
+.adm-l{opacity:.75;font-size:.9em}
+.cms{--serif:'Cormorant Garamond',Georgia,serif;position:absolute;inset:0;z-index:70;background:#F6F1E8;color:#2b2621;display:flex;flex-direction:column;font:15px/1.5 Inter,system-ui,sans-serif}
+.cms *{box-sizing:border-box}
+.cms-top{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#181512;color:#FBF8F3;flex-wrap:wrap}
+.cms-top b{font:600 20px var(--serif);letter-spacing:.02em}.cm-demo{font-size:12px;color:#CDBF9F;flex:1;min-width:140px}
+.cms-body{flex:1;min-height:0;display:flex}
+.cms-nav{width:190px;flex:none;background:#EDE5D6;padding:12px 8px;display:flex;flex-direction:column;gap:2px;overflow:auto}
+.cms-nav button{min-height:44px;text-align:left;border:0;background:none;padding:0 12px;border-radius:8px;font:500 15px Inter,sans-serif;color:#2b2621;cursor:pointer}
+.cms-nav button[aria-current=page]{background:#181512;color:#FBF8F3}
+.cms-nav .reset{margin-top:auto;color:#8a3b2e;font-size:13px}
+.cms-main{flex:1;min-width:0;overflow:auto;padding:20px 22px 80px}
+.cms-main:focus{outline:none}
+.cms h2{font:600 30px/1.1 var(--serif);margin:0 0 8px}.cms h3{font:600 18px var(--serif);margin:18px 0 8px}.cms h3 small{font:400 13px Inter;color:#7a6f60}
+.lede{color:#5c5348;max-width:62ch;margin:0 0 16px}
+.cm-btn{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #181512;background:#181512;color:#FBF8F3;font:600 14px Inter,sans-serif;cursor:pointer}
+.cm-btn.gh{background:transparent;color:#181512}.cm-btn.sm{min-height:40px;padding:0 14px;font-size:13px}.cm-btn.xs{min-height:36px;padding:0 12px;font-size:12px}
+.cm-btn:disabled{opacity:.4;cursor:default}.cms .cm-top .cm-btn.gh,.cms-top .cm-btn.gh{color:#FBF8F3;border-color:#CDBF9F}
+.cms :focus-visible{outline:3px solid #B5832E;outline-offset:2px}
+.cm-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.cm-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.cm-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}
+.cm-kpis div{background:#fff;border-radius:12px;padding:14px;border:1px solid #E4DAC6}.cm-kpis b{display:block;font:600 30px var(--serif)}.cm-kpis span{font-size:12px;color:#7a6f60}
+.cm-steps{padding-left:20px}.cm-steps li{margin:8px 0}.cm-steps b{display:block}
+.cm-note{font-size:12.5px;color:#7a6f60;background:#EDE5D6;padding:10px 12px;border-radius:10px;margin-top:16px}
+.cm-card{background:#fff;border:1px solid #E4DAC6;border-radius:14px;padding:16px;margin:14px 0}
+.cm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.cm-f{display:flex;flex-direction:column;gap:4px;margin:6px 0}.cm-f.wide{grid-column:1/-1}
+.cm-f label,.cm-f .lab{font:600 12px Inter;color:#5c5348;text-transform:uppercase;letter-spacing:.05em}
+.cms input:not([type=file]):not([type=checkbox]):not([type=range]),.cms select,.cms textarea{min-height:44px;border:1px solid #CFC3AB;border-radius:8px;padding:8px 10px;font:15px Inter,sans-serif;background:#fff;color:#2b2621;width:100%}
+.cm-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cm-list>li{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #E4DAC6;border-radius:12px;padding:8px;flex-wrap:wrap}
+.cm-list>li.col{align-items:flex-start}.cm-list .empty,.cm-media .empty,.cms .empty{color:#7a6f60;padding:12px}
+.cm-rowbtn{flex:1;min-width:200px;display:flex;gap:12px;align-items:center;background:none;border:0;text-align:left;cursor:pointer;min-height:56px;font:inherit;color:inherit}
+.cm-rowbtn small,.cm-slot small{display:block;color:#7a6f60;font-size:12.5px}
+.cm-pill{font:600 11px Inter;padding:4px 10px;border-radius:999px;background:#E4DAC6}.cm-pill.ok{background:#D5E5D0;color:#27501f}
+.cm-th{display:inline-block;position:relative;width:56px;height:44px;border-radius:8px;background:#ddd center/cover;flex:none}
+.cm-th.lg{width:72px;height:56px}.cm-th.xl{width:120px;height:90px}
+.cm-th i{position:absolute;inset:0;display:grid;place-items:center}.cm-th i svg{width:22px;height:22px}
+.cm-slot{display:flex;gap:14px;flex:1;min-width:0;flex-wrap:wrap}.cm-slot>div{flex:1;min-width:200px}
+.cm-cover{display:flex;gap:10px;align-items:center}.cm-cover b{display:block}
+.cm-drop{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;border:2px dashed #B8A98A;border-radius:14px;padding:22px;cursor:pointer;background:#FBF8F3;margin:8px 0;min-height:88px;justify-content:center}
+.cm-drop.sm{padding:12px;min-height:56px}.cm-drop input{position:absolute;opacity:0;width:1px;height:1px}.cm-drop:focus-within{outline:3px solid #B5832E}.cm-drop span{font-size:12.5px;color:#7a6f60}
+.cm-media{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.cm-media li{display:flex;gap:10px;align-items:center;background:#FBF8F3;border-radius:10px;padding:6px;flex-wrap:wrap}.cm-media li>span{flex:1;min-width:80px;font-size:13px;overflow:hidden;text-overflow:ellipsis}
+.cm-sec{border:1px solid #D8CCB4;border-radius:12px;padding:12px;margin:10px 0;background:#FBF8F3}.cm-sec legend{font:600 13px Inter;padding:0 6px}
+.cm-add{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:12px}.cm-add b{margin-right:6px}
+.cm-pool{display:flex;flex-wrap:wrap;gap:8px}.cm-pm{border:2px solid transparent;background:#fff;border-radius:10px;padding:4px;cursor:pointer;min-height:48px;min-width:48px;font:inherit}
+.cm-pm[aria-pressed=true]{border-color:#B5832E;box-shadow:0 0 0 2px #B5832E55}.cm-pool.big .cm-pm{width:132px}.cm-pool.big .cm-th{width:120px;height:80px}.cm-pm small{display:block;font-size:11px;margin-top:2px}
+.cm-checks{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}.cm-checks label{display:flex;gap:8px;align-items:center;min-height:44px}.cm-checks input{width:20px;height:20px}
+.cms-pick{position:absolute;inset:0;background:rgba(24,21,18,.7);display:grid;place-items:center;padding:14px;z-index:5;overflow:auto}
+.cms-pick[hidden]{display:none}.cms-pick .box{background:#F6F1E8;border-radius:16px;padding:18px;max-width:640px;width:100%;max-height:92%;overflow:auto}
+.cm-tile{border:0;padding:0;position:relative;background:#ddd center/cover;border-radius:10px;aspect-ratio:4/3;cursor:pointer;min-width:0}.cm-tile .pl{position:absolute;inset:0;display:grid;place-items:center}
+.cm-car{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.cm-car .cm-tile{flex:0 0 min(78%,320px);scroll-snap-align:start}
+.cm-vid{width:100%;border-radius:12px;background:#181512;margin:8px 0;max-height:70vh}
+.cm-split{display:grid;gap:18px;align-items:center}@container site (min-width:760px){.cm-split{grid-template-columns:1fr 1fr}}
+.cm-sp{aspect-ratio:4/3;border-radius:12px;background:#ddd center/cover}
+.cm-ba{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:#ddd}.cm-ba>div{position:absolute;inset:0;background-size:cover;background-position:center}.cm-before{clip-path:inset(0 50% 0 0)}
+.cm-rng{width:100%;min-height:44px}.cm-home{background:var(--ivory)}
+.s-prose section{margin:0 0 30px}.s-prose section h3{font:600 26px var(--serif);margin:0 0 10px}
+@media (max-width:700px){.cms-body{flex-direction:column}.cms-nav{width:auto;flex-direction:row;overflow-x:auto;padding:6px}.cms-nav button{white-space:nowrap;min-height:44px}.cms-nav .reset{margin:0 0 0 auto}.cms-main{padding:16px 14px 80px}}
+
 /* ===== PROPOSED CASARIO SITE (scoped .site; responds to its FRAME width via container queries) ===== */
 .site{--ivory:#FBF8F3;--linen:#F3ECE0;--sand:#E6DEC8;--ink:#181512;--ink2:#231F1C;--umber:#5B5046;--brass:#7A5A1E;--brassb:#D4AF6A;--sage:#3A4A3E;--err:#B3261E;--ok:#2F6B3F;--focus:#7A5A1E;
 --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -303,7 +364,7 @@ textarea.s-in{min-height:110px;resize:vertical}
 const INR = n => '₹' + Math.round(n).toLocaleString('en-IN');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const IMGV = {living:'--img-living', board:'--img-board', kitchen:'--img-kitchen', bed:'--img-bed'};
-const bgi = k => `background-image:var(${IMGV[k]})`;
+
 
 /* Client names, invoice numbers, RTGS/bank details from the source are deliberately NOT carried into the design (privacy rule). */
 const PROJECTS = [
@@ -403,7 +464,7 @@ function header(){
 }
 function overlays(){
   return `<div class="s-drawer dk" data-ov="drawer" role="dialog" aria-modal="true" aria-label="Site menu" data-open="false"><div class="top">${logo()}<button class="s-x" type="button" data-act="menu-close" aria-label="Close menu">✕</button></div>
-   <nav aria-label="Mobile">${NAV.map(([k,l])=>`<a href="#" data-act="go" data-sec="${k}">${l}<span aria-hidden="true">${ICON.arrow}</span></a>`).join('')}<a href="#" data-act="route" data-route="/about">About<span aria-hidden="true">${ICON.arrow}</span></a></nav>
+   <nav aria-label="Mobile">${NAV.map(([k,l])=>`<a href="#" data-act="go" data-sec="${k}">${l}<span aria-hidden="true">${ICON.arrow}</span></a>`).join('')}<a href="#" data-act="route" data-route="/about">About<span aria-hidden="true">${ICON.arrow}</span></a><a href="#" data-cms-open class="adm-l">Admin space<span aria-hidden="true">${ICON.arrow}</span></a></nav>
    <div class="meta"><a class="s-btn" href="#" data-act="go" data-sec="contact">Book a consultation</a><a href="tel:+919187061962" style="color:#fff">${F('+91 91870 61962')}</a><span>${F('Bengaluru · Mysuru · Dakshina Kannada')}</span></div></div>
   <div class="s-bar" data-ov="bar"><a href="tel:+919187061962">Call</a><a href="https://wa.me/919187061962" target="_blank" rel="noopener">WhatsApp</a><a class="pri" href="#" data-act="go" data-sec="contact">Book consult</a></div>
   <div class="s-modal" data-ov="modal" hidden><div class="s-mbox" role="dialog" aria-modal="true" aria-labelledby="mt"><button class="s-mclose" type="button" data-act="modal-close" aria-label="Close dialog">✕</button><div data-ov="mbody"></div></div></div>
@@ -415,7 +476,7 @@ function footer(){
    <div><h4>Explore</h4><ul>${[['Work','/portfolio'],['Services','/services'],['Studio','/studio'],['Materials','/materials'],['Estimate','/estimate'],['About','/about']].map(([l,r])=>`<li><a href="#" data-act="route" data-route="${r}">${l}</a></li>`).join('')}</ul></div>
    <div><h4>Contact</h4><ul><li><a href="tel:+919187061962">${F('+91 91870 61962')}</a></li><li><a href="#" data-act="route" data-route="/contact">${F('Email us')}</a></li><li><a href="#" data-act="route" data-route="/contact">Book a consultation</a></li></ul></div>
    </div>
-   <div class="legal"><span></span><span>© <span data-year></span> CASARIO Interior Design Studio · <a href="#" data-act="route" data-route="/privacy">Privacy</a> · Estimates are indicative and not a quotation.</span></div></div></footer>`;
+   <div class="legal"><span></span><span>© <span data-year></span> CASARIO Interior Design Studio · <a href="#" data-act="route" data-route="/privacy">Privacy</a> · Estimates are indicative and not a quotation. · <a href="#" data-cms-open>Admin</a></span></div></div></footer>`;
 }
 function projectCard(p, i=0){
   return `<a class="s-card" href="#" data-act="open-project" data-slug="${p.slug}"><div class="ph-w"><div class="ph" style="${bgi(p.img)}" role="img" aria-label="${esc(p.title)} — photograph"></div></div>
@@ -478,7 +539,7 @@ function homePage(){
     <p class="s-lead">Founder-led design and turnkey execution across Bengaluru, Mysuru and Dakshina Kannada — from the first space plan to the final handover clean.</p>
     <div class="acts"><a class="s-btn" href="#" data-act="go" data-sec="contact">Book a consultation ${ICON.arrow}</a><a class="s-link" href="#" data-act="go" data-sec="work">See selected work</a></div>
     <p class="loc"></p></div>
-   <div class="s-img hero reelbox" data-part="hero" role="group" aria-label="Featured interiors">${REEL.map((r,i)=>`<i class="rl${i?'':' on'}" style="${bgi(r[0])}" aria-hidden="true"></i>`).join('')}<div class="rcap" aria-live="off"><b data-reel-t>${REEL[0][1]}</b><div class="rdots">${REEL.map((r,i)=>`<button type="button" data-reel="${i}" aria-label="Show ${r[1]}" aria-pressed="${i?'false':'true'}"></button>`).join('')}</div></div>
+   <div class="s-img hero reelbox" data-part="hero" role="group" aria-label="Featured interiors">${REEL.map((r,i)=>`<i class="rl${i?'':' on'}" style="${slotBg('hero-'+(i+1))}" aria-hidden="true"></i>`).join('')}<div class="rcap" aria-live="off"><b data-reel-t>${reelCap(0)}</b><div class="rdots">${REEL.map((r,i)=>`<button type="button" data-reel="${i}" aria-label="Show photo ${i+1}" aria-pressed="${i?'false':'true'}"></button>`).join('')}</div></div>
     <button class="pz" type="button" data-act="pan" aria-pressed="false">Pause motion</button>
     <div class="cap"><span class="flag" data-f="Placeholder image">Placeholder · rights &amp; provenance unconfirmed</span></div></div></div>
   <section class="s-trust" aria-label="Studio principles"><div class="s-wrap"><ul>
@@ -487,7 +548,7 @@ function homePage(){
    <li>${ICON.swatch}<div><b>Materials named in writing</b><span></span></div></li>
    <li>${ICON.shield}<div><b>Weekly site milestones</b><span></span></div></li></ul></div></section>
   <section class="s-sec" data-sec="work"><div class="s-wrap"><div class="s-head"><span class="s-eyebrow">Selected work</span><h2 class="s-h2">Rooms planned to the last detail.</h2><p class="s-lead">Real briefs, named materials and the decisions behind them. </p></div>
-   <div class="s-filters" role="group" aria-label="Filter projects" data-part="pf">${[['all','All'],['turnkey','Full-home'],['kitchen','Kitchen & dining'],['bedroom','Bedroom & joinery'],['consultation','Space planning']].map(([k,l],i)=>`<button class="s-chip" type="button" data-act="pfilter" data-k="${k}" aria-pressed="${i===0}">${l}</button>`).join('')}</div>
+   <div class="s-filters" role="group" aria-label="Filter projects" data-part="pf">${[['all','All'],...CATS()].map(([k,l],i)=>`<button class="s-chip" type="button" data-act="pfilter" data-k="${k}" aria-pressed="${i===0}">${l}</button>`).join('')}</div>
    <p class="s-hint" role="status" aria-live="polite" data-part="pcount" style="margin-bottom:18px"></p>
    <div class="s-pgrid" data-part="pgrid"></div>
    <div style="margin-top:44px"><a class="s-link" href="#" data-act="route" data-route="/portfolio">View the full portfolio ${ICON.arrow}</a></div></div></section>
@@ -500,10 +561,10 @@ function homePage(){
    <div style="margin-top:32px"><a class="s-link" href="#" data-act="route" data-route="/services">All services &amp; process ${ICON.arrow}</a></div></div></section>
   <section class="s-sec dk" data-sec="process"><div class="s-wrap"><div class="s-head"><span class="s-eyebrow">How we work</span><h2 class="s-h2">A clear path from first call to handover.</h2></div>
    <ol class="s-steps"><li><h3>Consult</h3><p>One-to-one conversation, site visit and brief.</p></li><li><h3>Plan</h3><p>Space plan, lighting layout and moodboard.</p></li><li><h3>Specify &amp; quote</h3><p>Named materials and an itemised quotation.</p></li><li><h3>Build</h3><p>Weekly milestones, factory finish plus site craft.</p></li><li><h3>Handover</h3><p>Snagging, deep clean, move in. </p></li></ol></div></section>
-  <section class="s-sec"><div class="s-wrap" style="display:grid;gap:40px;align-items:center" data-sec="about" data-part="lead"><div class="s-img" style="${bgi('board')};aspect-ratio:16/10" role="img" aria-label="Material board with timber, stone, fabric swatches and floor plans"></div>
+  <section class="s-sec"><div class="s-wrap" style="display:grid;gap:40px;align-items:center" data-sec="about" data-part="lead"><div class="s-img" style="${slotBg('founder')};aspect-ratio:16/10" role="img" aria-label="Material board with timber, stone, fabric swatches and floor plans"></div>
    <div style="display:grid;gap:18px"><span class="s-eyebrow">The studio</span><h2 class="s-h2">Engineering rigour, a designer’s eye.</h2><p class="s-lead">${F('Er. Rashmi A H leads every project personally — from the space plan to the site.','Confirm')}</p><div><a class="s-link" href="#" data-act="route" data-route="/about">Meet the studio ${ICON.arrow}</a></div></div></div></section>
   <section class="s-sec dk" data-sec="studio"><div class="s-wrap"><div class="s-head"><span class="s-eyebrow">Studio experience</span><h2 class="s-h2">Slide from blueprint to livable.</h2><p class="s-lead">Drag the slider or use the arrow keys. Switch the lighting and open each detail. <a href="#" data-act="route" data-route="/studio" style="color:var(--brassb)">Open the full studio</a></p></div>
-   <div class="s-viz"><div><div class="s-vz" data-part="vz"><div class="after" style="${bgi('living')}" role="img" aria-label="Finished living room"></div><div class="tint"></div>
+   <div class="s-viz"><div><div class="s-vz" data-part="vz"><div class="after" style="${slotBg('studio-after')}" role="img" aria-label="Finished living room"></div><div class="tint"></div>
     <div class="before"><div class="bp" aria-hidden="true"><span>PRE-EXECUTION SHELL · ILLUSTRATIVE ELEVATION</span><svg viewBox="0 0 600 260"><rect x="20" y="20" width="560" height="220" stroke-dasharray="6 4"/><rect x="70" y="32" width="460" height="24"/><rect x="35" y="65" width="110" height="160"/><path d="M55 65v160M75 65v160M95 65v160M115 65v160"/><rect x="190" y="125" width="230" height="65" rx="12"/><rect x="235" y="175" width="140" height="45"/></svg></div></div>
     ${HOTSPOTS.map((h,i)=>`<button class="hs" type="button" style="left:${h.x}%;top:${h.y}%" data-act="hs" data-i="${i}" aria-pressed="${i===0}" aria-label="Detail ${i+1}: ${esc(h.t)}"><span>${i+1}</span></button>`).join('')}</div>
     <div class="s-vctl"><label class="lab" for="vzr-%ID%">Blueprint ↔ finished room</label><input class="s-range" id="vzr-%ID%" type="range" min="0" max="100" value="30" data-act="vzr" aria-valuetext="30% blueprint">
@@ -523,7 +584,7 @@ function homePage(){
 function portfolioPage(){
   return `<div class="s-wrap"><div class="s-bc"><a href="#" data-act="route" data-route="/">Home</a> / <span aria-current="page">Portfolio</span></div>
   <div class="s-ptitle"><span class="s-eyebrow">Portfolio</span><h1 class="s-h1" style="font-size:clamp(44px,10cqi,76px)">Selected work</h1><p class="s-lead">Browse by room type or location. Every project lists its scope and named materials.</p></div>
-  <div class="s-bar2"><div class="s-filters" style="margin:0" role="group" aria-label="Category" data-part="pf">${[['all','All'],['turnkey','Full-home'],['kitchen','Kitchen & dining'],['bedroom','Bedroom & joinery'],['consultation','Space planning']].map(([k,l],i)=>`<button class="s-chip" type="button" data-act="pfilter" data-k="${k}" aria-pressed="${i===0}">${l}</button>`).join('')}</div>
+  <div class="s-bar2"><div class="s-filters" style="margin:0" role="group" aria-label="Category" data-part="pf">${[['all','All'],...CATS()].map(([k,l],i)=>`<button class="s-chip" type="button" data-act="pfilter" data-k="${k}" aria-pressed="${i===0}">${l}</button>`).join('')}</div>
    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><label class="s-hint" for="loc-%ID%">Location</label><select class="s-sel" id="loc-%ID%" data-act="ploc"><option value="">All locations</option><option>Bengaluru</option><option>Mysuru</option><option>Mangaluru</option></select>
    <label class="s-hint" for="srt-%ID%">Sort</label><select class="s-sel" id="srt-%ID%" data-act="psort"><option value="new">Newest</option><option value="az">A–Z</option></select>
    <div class="s-seg" role="group" aria-label="View"><button type="button" data-act="pview" data-v="grid" aria-pressed="true">Grid</button><button type="button" data-act="pview" data-v="index" aria-pressed="false">Index</button></div></div></div>
@@ -692,9 +753,346 @@ function drawEstKeep(d){ const st=d._st, r=$(d,'[data-part=estres]'); r.innerHTM
 
 const REEL=[['living','Living sanctuary'],['kitchen','Walnut & cashmere kitchen'],['bed','Fluted oak master suite'],['board','Material & space planning']];
 function initReel(d){ if(d._rt) clearInterval(d._rt); const h=d.querySelector('[data-part=hero].reelbox'); if(!h) return; let i=0; const L=[...h.querySelectorAll('.rl')], D=[...h.querySelectorAll('[data-reel]')], T=h.querySelector('[data-reel-t]');
-  const show=n=>{ i=(n+L.length)%L.length; L.forEach((l,k)=>l.classList.toggle('on',k===i)); D.forEach((b,k)=>b.setAttribute('aria-pressed',k===i)); T.textContent=REEL[i][1]; };
+  const show=n=>{ i=(n+L.length)%L.length; L.forEach((l,k)=>l.classList.toggle('on',k===i)); D.forEach((b,k)=>b.setAttribute('aria-pressed',k===i)); T.textContent=reelCap(i); };
   h.addEventListener('click',e=>{ const b=e.target.closest('[data-reel]'); if(b) show(+b.dataset.reel); });
   const rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches; if(!rm) d._rt=setInterval(()=>{ if(!h.classList.contains('paused')&&document.visibilityState==='visible') show(i+1); },6500); else h.classList.add('paused'); }
-const _ms=mountSite; mountSite=function(d,p,o){ const r=_ms(d,p,o); initReel(d); return r; };
+const _ms=mountSite; mountSite=function(d,p,o){ wirePublic(d); const r=_ms(d,p,o); initReel(d); applyHomeSections(d); return r; };
+/* ===== CASARIO Admin Space (POC): dynamic content store + editor =====
+   Data model lives in the browser (localStorage + IndexedDB for uploaded media).
+   The public site renders ONLY from this model, so edits appear without redeploying.
+   Production: same model in Supabase (projects, project_images, categories, site settings). */
+const SEED_PROJECTS = JSON.parse(JSON.stringify(PROJECTS));
+const NAV_BASE = NAV.slice();
+const CMS_KEY = 'casario.cms.v1';
+const CMS = { data:null, media:{}, saved:null, persist:true };
+const uid = () => 'x'+Math.random().toString(36).slice(2,9);
+const slugify = s => (s||'project').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60)||'project';
+const BUILTIN_MEDIA = {
+  'b:living':{kind:'image',name:'Living room',css:'var(--img-living)'},
+  'b:kitchen':{kind:'image',name:'Kitchen & dining',css:'var(--img-kitchen)'},
+  'b:bed':{kind:'image',name:'Master bedroom',css:'var(--img-bed)'},
+  'b:board':{kind:'image',name:'Material & planning board',css:'var(--img-board)'},
+  'v:living':{kind:'video',name:'Living room walkthrough (sample video)',src:'media/reel-living.mp4',css:'var(--img-living)'},
+  'v:kitchen':{kind:'video',name:'Kitchen walkthrough (sample video)',src:'media/reel-kitchen.mp4',css:'var(--img-kitchen)'}
+};
+for(const k in BUILTIN_MEDIA) BUILTIN_MEDIA[k].id=k, BUILTIN_MEDIA[k].builtin=true;
+const CAT_SAMPLES = {turnkey:['b:living','v:living','b:kitchen','b:bed'],kitchen:['b:kitchen','v:kitchen'],bedroom:['b:bed'],consultation:['b:board']};
+const DEFAULT_SLOTS = {'hero-1':'b:living','hero-2':'b:kitchen','hero-3':'b:bed','hero-4':'b:board','studio-after':'b:living','founder':'b:board'};
+const SLOT_INFO = {
+  'hero-1':['Home hero · slide 1','Top of the home page, first rotating photo'],'hero-2':['Home hero · slide 2','Second rotating photo'],
+  'hero-3':['Home hero · slide 3','Third rotating photo'],'hero-4':['Home hero · slide 4','Fourth rotating photo'],
+  'studio-after':['Studio · finished room','The “after” photo in the before/after room experience'],'founder':['Founder section','Photo beside the founder introduction']
+};
+const mediaOf = id => BUILTIN_MEDIA[id] || CMS.media[id];
+function bgi(k){ const m = mediaOf(k) || (IMGV[k] ? {css:`var(${IMGV[k]})`} : null); return `background-image:${m?m.css:'none'}`; }
+function slotBg(s){ return bgi((CMS.data&&CMS.data.slots[s])||DEFAULT_SLOTS[s]); }
+function reelCap(i){ return (CMS.data&&CMS.data.slotText['hero-'+(i+1)]) || REEL[i][1]; }
 
-window.addEventListener('DOMContentLoaded',()=>mountSite(document.getElementById('app'),'home'));</script></body></html>
+/* ---------- IndexedDB (uploaded files) ---------- */
+const IDB = { db:null,
+  open(){ return new Promise(res=>{ try{ const r=indexedDB.open('casario-cms',1); r.onupgradeneeded=()=>r.result.createObjectStore('media',{keyPath:'id'}); r.onsuccess=()=>{IDB.db=r.result;res(true)}; r.onerror=()=>res(false); r.onblocked=()=>res(false); }catch(e){ res(false); } }); },
+  st(m){ return IDB.db.transaction('media',m).objectStore('media'); },
+  all(){ return new Promise(res=>{ if(!IDB.db) return res([]); try{ const q=IDB.st('readonly').getAll(); q.onsuccess=()=>res(q.result||[]); q.onerror=()=>res([]); }catch(e){res([])} }); },
+  put(rec){ return new Promise(res=>{ if(!IDB.db) return res(false); try{ const q=IDB.st('readwrite').put(rec); q.onsuccess=()=>res(true); q.onerror=()=>res(false); }catch(e){res(false)} }); },
+  del(id){ return new Promise(res=>{ if(!IDB.db) return res(false); try{ const q=IDB.st('readwrite').delete(id); q.onsuccess=()=>res(true); q.onerror=()=>res(false); }catch(e){res(false)} }); },
+  clear(){ return new Promise(res=>{ if(!IDB.db) return res(false); try{ const q=IDB.st('readwrite').clear(); q.onsuccess=()=>res(true); q.onerror=()=>res(false); }catch(e){res(false)} }); }
+};
+function registerMedia(rec){
+  const url = URL.createObjectURL(rec.blob); const m = {id:rec.id,kind:rec.kind,name:rec.name,src:url,css:`url("${url}")`,uploaded:true,created:rec.created};
+  if(rec.kind==='video'){ if(rec.poster){ m.css=`url("${URL.createObjectURL(rec.poster)}")`; } else m.css='linear-gradient(#2b2621,#181512)'; }
+  CMS.media[rec.id]=m; return m;
+}
+function videoPoster(file){
+  return new Promise(res=>{ try{ const v=document.createElement('video'), u=URL.createObjectURL(file); v.muted=true; v.preload='metadata'; v.src=u; let done=false; const fin=b=>{ if(done) return; done=true; URL.revokeObjectURL(u); res(b); };
+    v.onloadeddata=()=>{ v.currentTime=Math.min(0.5,(v.duration||1)/2); }; v.onseeked=()=>{ try{ const c=document.createElement('canvas'); c.width=640; c.height=Math.round(640*(v.videoHeight||360)/(v.videoWidth||640)); c.getContext('2d').drawImage(v,0,0,c.width,c.height); c.toBlob(b=>fin(b),'image/jpeg',.8); }catch(e){fin(null)} }; v.onerror=()=>fin(null); setTimeout(()=>fin(null),3500); }catch(e){ res(null); } });
+}
+async function addFiles(files){
+  const out=[]; for(const f of files){ const kind=f.type.startsWith('video/')?'video':f.type.startsWith('image/')?'image':null; if(!kind) continue;
+    const rec={id:'u:'+uid(),kind,name:f.name,blob:f,created:Date.now()}; if(kind==='video') rec.poster=await videoPoster(f);
+    const ok=await IDB.put(rec); if(!ok) CMS.persist=false; out.push(registerMedia(rec)); }
+  return out;
+}
+
+/* ---------- data ---------- */
+function seedData(){
+  const cats=[{id:'turnkey',label:'Full-home turnkey',cover:'b:living'},{id:'kitchen',label:'Kitchen & dining',cover:'b:kitchen'},{id:'bedroom',label:'Bedroom & joinery',cover:'b:bed'},{id:'consultation',label:'Space planning',cover:'b:board'}];
+  const projects=SEED_PROJECTS.map(p=>({id:p.slug,slug:p.slug,title:p.title,cat:p.cat,loc:p.loc,year:p.year,sum:p.sum,cover:'b:'+p.img,published:true,area:'',dur:'',scope:p.scope,
+    media:['b:living','b:kitchen','b:bed','b:board'],
+    sections:[{id:uid(),layout:'text',title:'The brief',text:p.brief},{id:uid(),layout:'text',title:'Our approach',text:p.appr},{id:uid(),layout:'list',title:'Materials & specifications',items:p.mats},{id:uid(),layout:'gallery',title:'Gallery',media:['b:living','b:kitchen','b:bed','b:board']}]}));
+  return {v:1,cats,projects,slots:{},slotText:{},homeSections:[]};
+}
+function save(){ try{ localStorage.setItem(CMS_KEY,JSON.stringify(CMS.data)); CMS.saved=Date.now(); }catch(e){ CMS.persist=false; } const el=document.querySelector('[data-cms-saved]'); if(el) el.textContent=CMS.persist?'All changes saved in this browser':'Could not save (storage blocked) — changes last until you close the tab'; }
+let _st; const saveSoon=()=>{ clearTimeout(_st); _st=setTimeout(save,300); const el=document.querySelector('[data-cms-saved]'); if(el) el.textContent='Saving…'; };
+function rebuild(){
+  const D=CMS.data; PROJECTS.length=0;
+  D.projects.filter(p=>p.published).forEach(p=>{ const c=D.cats.find(x=>x.id===p.cat);
+    PROJECTS.push({slug:p.slug,cat:p.cat,catLabel:c?c.label:'Project',img:p.cover||(c&&c.cover)||'b:living',title:p.title,loc:p.loc||'—',year:p.year||'',area:p.area||'—',dur:p.dur||'—',scope:p.scope||'',mats:[],sum:p.sum||'',brief:'',appr:'',_rec:p}); });
+  NAV.length=0; NAV_BASE.forEach(n=>NAV.push(n)); D.homeSections.filter(s=>s.published&&s.inNav).forEach(s=>NAV.push([s.id,s.title]));
+}
+CMS.ready = async function(){
+  const ok=await IDB.open(); if(!ok) CMS.persist=false;
+  try{ const raw=localStorage.getItem(CMS_KEY); CMS.data=raw?JSON.parse(raw):null; }catch(e){ CMS.data=null; }
+  if(!CMS.data||CMS.data.v!==1){ CMS.data=seedData(); }
+  (await IDB.all()).forEach(registerMedia); rebuild(); save();
+};
+CMS.reset = async function(){ await IDB.clear(); Object.keys(CMS.media).forEach(k=>delete CMS.media[k]); CMS.data=seedData(); save(); rebuild(); };
+const CATS = () => CMS.data.cats.filter(c=>CMS.data.projects.some(p=>p.published&&p.cat===c.id)).map(c=>[c.id,c.label]);
+const LOCS = () => [...new Set(PROJECTS.flatMap(p=>String(p.loc).split(/ & |, /)).filter(x=>x&&x!=='—'))];
+
+/* ---------- public rendering of sections ---------- */
+const PLAY = '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(24,21,18,.7)"/><path d="M10 8l6 4-6 4z" fill="#FBF8F3"/></svg>';
+const nl2p = t => esc(t||'').split(/\n+/).filter(Boolean).map(x=>`<p>${x}</p>`).join('');
+function tile(id,i,sid,label){ const m=mediaOf(id); if(!m) return ''; return `<button type="button" class="cm-tile" style="background-image:${m.css}" data-act2="lb2" data-s="${sid}" data-i="${i}" aria-label="${esc(label||'Open')} ${esc(m.name)}">${m.kind==='video'?`<span class="pl">${PLAY}</span>`:''}</button>`; }
+function secHTML(sec,rec){
+  const T=sec.title?`<h3>${esc(sec.title)}</h3>`:''; const ms=(sec.media||[]).filter(mediaOf);
+  if(sec.layout==='text') return `<section data-sid="${sec.id}">${T}${nl2p(sec.text)}</section>`;
+  if(sec.layout==='list') return `<section data-sid="${sec.id}">${T}<div class="s-mats">${(sec.items||[]).map(x=>`<div><b>${esc(x)}</b></div>`).join('')}</div></section>`;
+  if(sec.layout==='gallery') return `<section data-sid="${sec.id}">${T}${sec.text?nl2p(sec.text):''}<div class="s-gal">${ms.map((id,i)=>tile(id,i,sec.id,'Open')).join('')||'<p class="s-hint">No media in this section yet.</p>'}</div></section>`;
+  if(sec.layout==='carousel') return `<section data-sid="${sec.id}">${T}<div class="cm-car" role="region" aria-label="${esc(sec.title||'Carousel')}" tabindex="0">${ms.map((id,i)=>tile(id,i,sec.id,'Open')).join('')||'<p class="s-hint">No media in this section yet.</p>'}</div></section>`;
+  if(sec.layout==='video'){ const vs=ms.map(mediaOf).filter(m=>m.kind==='video'); return `<section data-sid="${sec.id}">${T}${sec.text?nl2p(sec.text):''}${vs.map(v=>`<video class="cm-vid" controls preload="metadata" playsinline src="${v.src}" aria-label="${esc(v.name)}"></video>`).join('')||'<p class="s-hint">No video in this section yet.</p>'}</section>`; }
+  if(sec.layout==='split'){ const m=ms.map(mediaOf).find(x=>x.kind==='image')||mediaOf(ms[0]); return `<section data-sid="${sec.id}" class="cm-split"><div>${T}${nl2p(sec.text)}</div>${m?`<div class="cm-sp" style="background-image:${m.css}" role="img" aria-label="${esc(m.name)}"></div>`:''}</section>`; }
+  if(sec.layout==='beforeafter'){ const a=mediaOf(ms[0]), b=mediaOf(ms[1]); if(!a||!b) return `<section data-sid="${sec.id}">${T}<p class="s-hint">Add two photos (before, after) to this section.</p></section>`; const id='ba'+sec.id;
+    return `<section data-sid="${sec.id}">${T}<div class="cm-ba" data-ba><div class="cm-after" style="background-image:${b.css}" role="img" aria-label="After"></div><div class="cm-before" style="background-image:${a.css}" role="img" aria-label="Before"></div></div><label class="s-hint" for="${id}">Drag to compare before and after</label><input class="cm-rng" id="${id}" type="range" min="0" max="100" value="50" data-act2="ba"></section>`; }
+  return '';
+}
+function projectPage(st){
+  const p=PROJECTS.find(x=>x.slug===st.slug)||PROJECTS[0];
+  if(!p) return `<div class="s-wrap"><div class="s-empty"><h3 class="s-h3">No projects published yet</h3><p>Add one in the Admin space.</p></div></div>`;
+  const r=p._rec, rel=PROJECTS.filter(x=>x!==p).slice(0,2), cm=mediaOf(p.img);
+  const facts=[['Type',esc(p.catLabel)],['Location',esc(p.loc)],['Year',esc(p.year)],['Area',esc(p.area)],['Duration',esc(p.dur)],['Scope',esc(p.scope)]].filter(f=>f[1]&&f[1]!=='—');
+  return `<div class="s-wrap"><div class="s-bc"><a href="#" data-act="route" data-route="/">Home</a> / <a href="#" data-act="route" data-route="/portfolio">Portfolio</a> / <span aria-current="page">${esc(p.title)}</span></div>
+  <div class="s-ptitle"><span class="s-eyebrow">${esc(p.catLabel)}</span><h1 class="s-h1" style="font-size:clamp(40px,9cqi,72px)">${esc(p.title)}</h1><p class="s-lead">${esc(p.sum)}</p></div>
+  ${cm&&cm.kind==='video'?`<video class="cm-vid" controls preload="metadata" playsinline src="${cm.src}" aria-label="${esc(p.title)}"></video>`:`<div class="s-img" style="${bgi(p.img)};aspect-ratio:16/8;min-height:240px" role="img" aria-label="${esc(p.title)}"></div>`}
+  <div class="s-pd" style="padding-block:44px 60px"><div class="s-prose">${(r.sections||[]).map(s=>secHTML(s,r)).join('')}
+    <div class="s-cta dk"><span class="s-eyebrow">Similar project?</span><h3 class="s-h3" style="font-size:34px">Planning something like this?</h3><p style="color:#B9B1A5">Tell us about your space and we’ll suggest a starting point.</p><div><button class="s-btn" type="button" data-act="similar" data-t="${esc(p.title)}">Discuss a similar project ${ICON.arrow}</button></div></div></div>
+   <dl class="s-facts">${facts.map(f=>`<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('')}</dl></div>
+  ${rel.length?`<section style="padding-bottom:90px"><h3 class="s-h3" style="margin-bottom:26px">More work</h3><div class="s-pgrid">${rel.map(projectCard).join('')}</div></section>`:''}</div>`;
+}
+function homeSecHTML(s){
+  const T=`<div class="s-head"><span class="s-eyebrow">${esc(s.kicker||'')}</span><h2 class="s-h2">${esc(s.title)}</h2>${s.text?`<p class="s-lead">${esc(s.text)}</p>`:''}</div>`;
+  const ms=(s.mediaIds||[]).filter(mediaOf); let body='';
+  if(s.layout==='cards'){ const l=(s.projectIds&&s.projectIds.length?PROJECTS.filter(p=>s.projectIds.includes(p._rec.id)):PROJECTS.slice(0,3)); body=`<div class="s-pgrid">${l.map(projectCard).join('')||'<p class="s-hint">No projects selected.</p>'}</div>`; }
+  else if(s.layout==='strip') body=`<div class="cm-car" role="region" aria-label="${esc(s.title)}" tabindex="0">${ms.map((id,i)=>tile(id,i,'h'+s.id,'Open')).join('')||'<p class="s-hint">No media selected.</p>'}</div>`;
+  else if(s.layout==='video') body=ms.map(mediaOf).filter(m=>m.kind==='video').map(v=>`<video class="cm-vid" controls preload="metadata" playsinline src="${v.src}" aria-label="${esc(v.name)}"></video>`).join('')||'<p class="s-hint">No video selected.</p>';
+  else { const m=mediaOf(ms[0]); body=`<div class="cm-split"><div>${nl2p(s.body||'')}</div>${m?`<div class="cm-sp" style="background-image:${m.css}" role="img" aria-label="${esc(m.name)}"></div>`:''}</div>`; }
+  return `<section class="s-sec cm-home" data-sec="${s.id}"><div class="s-wrap">${T}${body}</div></section>`;
+}
+function applyHomeSections(d){
+  if(!d._st||d._st.page!=='home') return;
+  d.querySelectorAll('.cm-home').forEach(n=>n.remove());
+  CMS.data.homeSections.filter(s=>s.published).forEach(s=>{ const a=d.querySelector(`[data-sec="${s.after||'work'}"]:not(a)`); const host=a?(a.closest('section')||a):d.querySelector('[data-sec=contact]:not(a)'); if(host) host.insertAdjacentHTML('afterend',homeSecHTML(s)); });
+}
+function allSectionMedia(sid){
+  for(const p of CMS.data.projects){ const s=p.sections.find(x=>x.id===sid); if(s) return s.media||[]; }
+  if(sid.startsWith('h')){ const h=CMS.data.homeSections.find(x=>x.id===sid.slice(1)); if(h) return h.mediaIds||[]; }
+  return [];
+}
+function lightbox(d,sid,i,opener){
+  const ids=allSectionMedia(sid).filter(mediaOf); if(!ids.length) return; const draw=()=>{ const m=mediaOf(ids[i]);
+    $(d,'[data-ov=mbody]').innerHTML=`<h3 class="s-h3" id="mt">${esc(m.name)} <small style="font-size:14px;color:var(--umber)">(${i+1} of ${ids.length})</small></h3>${m.kind==='video'?`<video class="cm-vid" controls autoplay playsinline src="${m.src}" aria-label="${esc(m.name)}"></video>`:`<div class="s-img" style="background-image:${m.css};background-size:contain;background-repeat:no-repeat;background-color:#181512;aspect-ratio:16/10" role="img" aria-label="${esc(m.name)}"></div>`}<div style="display:flex;justify-content:space-between;margin-top:12px"><button class="s-btn gh" type="button" data-act2="lb-nav" data-d="-1">← Previous</button><button class="s-btn gh" type="button" data-act2="lb-nav" data-d="1">Next →</button></div>`; };
+  openModal(d,'',opener); draw(); const mod=$(d,'[data-ov=modal]'); mod._lb={n:ids.length,go:k=>{ i=(i+k+ids.length)%ids.length; draw(); const b=$(d,'[data-act2=lb-nav][data-d="'+k+'"]'); if(b) b.focus(); }};
+}
+function wirePublic(d){
+  if(d._cmsPub) return; d._cmsPub=true;
+  d.addEventListener('click',e=>{ const t=e.target.closest('[data-act2],[data-cms-open]'); if(!t) return;
+    if(t.dataset.cmsOpen!==undefined){ e.preventDefault(); menu(d,false,false); openAdmin(d); return; }
+    const a=t.dataset.act2; if(a==='lb2') lightbox(d,t.dataset.s,+t.dataset.i,t); else if(a==='lb-nav'){ const m=$(d,'[data-ov=modal]'); if(m._lb) m._lb.go(+t.dataset.d); } });
+  d.addEventListener('input',e=>{ const t=e.target; if(t.dataset&&t.dataset.act2==='ba'){ const b=t.previousElementSibling&&t.previousElementSibling.previousElementSibling; const box=t.parentElement.querySelector('[data-ba]'); box.querySelector('.cm-before').style.clipPath=`inset(0 ${100-t.value}% 0 0)`; } });
+}
+
+/* ================= ADMIN SPACE ================= */
+const A = { d:null, view:'dash', pid:null, hid:null, pick:null };
+const aEsc = esc;
+const LAYOUTS = {text:'Text',gallery:'Photo gallery',carousel:'Carousel',video:'Video',split:'Text + photo',beforeafter:'Before & after',list:'Details list'};
+const PRESETS = [['text','Overview text'],['gallery','Photo gallery'],['video','Video'],['carousel','Carousel'],['beforeafter','Before & after'],['split','Text + photo'],['list','Details list']];
+const VIEWS = [['dash','Dashboard'],['projects','Projects'],['slots','Site photos'],['home','Home sections'],['cats','Categories'],['lib','Media library']];
+const proj = () => CMS.data.projects.find(p=>p.id===A.pid);
+const chip = (t,c) => `<span class="cm-pill ${c||''}">${t}</span>`;
+function openAdmin(d){
+  A.d=d; A.view='dash'; A.pid=null; A.hid=null; d.querySelector('.cms')?.remove();
+  d.insertAdjacentHTML('beforeend',`<div class="cms" role="dialog" aria-modal="true" aria-label="Admin space"><header class="cms-top"><b>Admin space</b><span class="cm-demo" data-cms-saved></span><button type="button" class="cm-btn gh" data-c="exit">← Back to website</button></header>
+  <div class="cms-body"><nav class="cms-nav" aria-label="Admin sections">${VIEWS.map(([k,l])=>`<button type="button" data-c="view" data-v="${k}">${l}</button>`).join('')}<button type="button" class="reset" data-c="reset">Reset demo data</button></nav><main class="cms-main" id="cms-main" tabindex="-1"></main></div><div class="cms-pick" hidden></div></div>`);
+  const ov=d.querySelector('.cms'); ov.addEventListener('click',onClick); ov.addEventListener('input',onInput); ov.addEventListener('change',onChange); ov.addEventListener('keydown',onKey);
+  ov.addEventListener('dragover',e=>{ if(e.target.closest('.cm-drop')) e.preventDefault(); }); ov.addEventListener('drop',e=>{ const z=e.target.closest('.cm-drop'); if(!z) return; e.preventDefault(); handleFiles(e.dataTransfer.files); });
+  setBg(d,true); render(); const s=d.querySelector('[data-cms-saved]'); s.textContent=CMS.persist?'Demo: changes are saved in this browser':'Storage is blocked — changes last for this tab only';
+  ov.querySelector('#cms-main').focus();
+}
+function closeAdmin(toProject){
+  const d=A.d; d.querySelector('.cms')?.remove(); setBg(d,false); save(); rebuild();
+  const st=d._st; if(toProject){ mountSite(d,'project',{slug:toProject}); } else mountSite(d,st.page==='project'&&!PROJECTS.find(p=>p.slug===st.slug)?'portfolio':st.page,{slug:st.slug});
+  const sc=scroller(d); if(sc) sc.scrollTo({top:0,behavior:'instant'});
+}
+function render(){
+  const ov=A.d.querySelector('.cms'), m=ov.querySelector('#cms-main');
+  ov.querySelectorAll('.cms-nav [data-v]').forEach(b=>b.setAttribute('aria-current',b.dataset.v===A.view?'page':'false'));
+  m.innerHTML = ({dash:vDash,projects:vProjects,edit:vEdit,slots:vSlots,home:vHome,hedit:vHEdit,cats:vCats,lib:vLib})[A.view]();
+}
+const thumb = (id,cls='') => { const x=mediaOf(id); return x?`<span class="cm-th ${cls}" style="background-image:${x.css}" role="img" aria-label="${aEsc(x.name)}">${x.kind==='video'?`<i>${PLAY}</i>`:''}</span>`:'<span class="cm-th"></span>'; };
+function vDash(){
+  const D=CMS.data, up=Object.keys(CMS.media).length;
+  return `<h2>Dashboard</h2><p class="lede">Create projects, upload photos and videos, and arrange them into sections. The website updates the moment you save — no redeploy.</p>
+  <div class="cm-kpis"><div><b>${D.projects.length}</b><span>projects (${D.projects.filter(p=>p.published).length} published)</span></div><div><b>${D.cats.length}</b><span>categories</span></div><div><b>${up}</b><span>uploaded files</span></div><div><b>${D.homeSections.length}</b><span>home sections you added</span></div></div>
+  <div class="cm-row"><button class="cm-btn" type="button" data-c="newproj">+ New project</button><button class="cm-btn gh" type="button" data-c="view" data-v="slots">Change site photos</button><button class="cm-btn gh" type="button" data-c="view" data-v="home">Add a home section</button></div>
+  <h3>How it works</h3><ol class="cm-steps"><li><b>Create a project</b>Name it, pick a category, add location and year.</li><li><b>Upload photos and videos</b>Drag them in, or add the sample media for that category.</li><li><b>Build sections</b>Gallery, video, carousel, before &amp; after, text — add as many as you like, in any order.</li><li><b>Publish</b>It appears on the website straight away.</li></ol>
+  <p class="cm-note">Demo note: this proof of concept saves your changes in this browser only. In the real build the same screens save to the studio database and file storage, behind a secure sign-in, and everyone sees updates instantly.</p>`;
+}
+function vProjects(){
+  const D=CMS.data;
+  return `<div class="cm-head"><h2>Projects</h2><button class="cm-btn" type="button" data-c="newproj">+ New project</button></div>
+  <ul class="cm-list">${D.projects.map(p=>{ const c=D.cats.find(x=>x.id===p.cat); return `<li><button type="button" class="cm-rowbtn" data-c="edit" data-id="${p.id}">${thumb(p.cover||(c&&c.cover),'lg')}<span><b>${aEsc(p.title)}</b><small>${aEsc(c?c.label:'No category')} · ${aEsc(p.loc||'No location')} · ${p.sections.length} section${p.sections.length===1?'':'s'} · ${(p.media||[]).length} media</small></span></button>${chip(p.published?'Published':'Draft',p.published?'ok':'')}
+    <button type="button" class="cm-btn gh sm" data-c="togglepub" data-id="${p.id}">${p.published?'Unpublish':'Publish'}</button><button type="button" class="cm-btn gh sm" data-c="delproj" data-id="${p.id}" aria-label="Delete ${aEsc(p.title)}">Delete</button></li>`; }).join('')||'<li class="empty">No projects yet — create your first one.</li>'}</ul>`;
+}
+function catSel(sel){ return CMS.data.cats.map(c=>`<option value="${c.id}" ${c.id===sel?'selected':''}>${aEsc(c.label)}</option>`).join(''); }
+function vEdit(){
+  const p=proj(); if(!p) return vProjects();
+  const med=(p.media||[]).filter(mediaOf);
+  return `<div class="cm-head"><button class="cm-btn gh sm" type="button" data-c="view" data-v="projects">← All projects</button><div class="cm-row"><button class="cm-btn gh sm" type="button" data-c="viewsite">View on website</button><button class="cm-btn ${p.published?'gh':''} sm" type="button" data-c="togglepub" data-id="${p.id}">${p.published?'Unpublish':'Publish'}</button></div></div>
+  <h2>Edit project ${chip(p.published?'Published':'Draft',p.published?'ok':'')}</h2>
+  <div class="cm-card"><h3>Details</h3><div class="cm-grid">
+   <div class="cm-f"><label for="f-title">Project title</label><input id="f-title" data-f="title" value="${aEsc(p.title)}"></div>
+   <div class="cm-f"><label for="f-cat">Category</label><select id="f-cat" data-f="cat">${catSel(p.cat)}</select></div>
+   <div class="cm-f"><label for="f-loc">Location</label><input id="f-loc" data-f="loc" value="${aEsc(p.loc||'')}" placeholder="e.g. Bengaluru"></div>
+   <div class="cm-f"><label for="f-year">Year</label><input id="f-year" data-f="year" value="${aEsc(p.year||'')}" placeholder="e.g. 2026"></div>
+   <div class="cm-f"><label for="f-area">Area (optional)</label><input id="f-area" data-f="area" value="${aEsc(p.area||'')}" placeholder="e.g. 1,650 sq.ft"></div>
+   <div class="cm-f"><label for="f-dur">Duration (optional)</label><input id="f-dur" data-f="dur" value="${aEsc(p.dur||'')}" placeholder="e.g. 10 weeks"></div>
+   <div class="cm-f wide"><label for="f-sum">Short summary</label><textarea id="f-sum" data-f="sum" rows="2">${aEsc(p.sum||'')}</textarea></div>
+   <div class="cm-f wide"><label for="f-scope">Scope (optional)</label><input id="f-scope" data-f="scope" value="${aEsc(p.scope||'')}" placeholder="What was designed and built"></div></div>
+   <div class="cm-row" style="margin-top:12px"><div class="cm-cover">${thumb(p.cover,'lg')}<span><b>Cover</b><small>Shown on cards and at the top of the project</small></span></div><button class="cm-btn gh sm" type="button" data-c="pickcover">Change cover</button></div></div>
+  <div class="cm-card"><h3>Photos &amp; videos for this project <small>(${med.length})</small></h3>
+   <label class="cm-drop"><input type="file" id="up" multiple accept="image/*,video/*" data-c="upload"><b>Drop photos or videos here</b><span>or click to choose files · JPG, PNG, WebP, MP4, MOV</span></label>
+   <div class="cm-row"><button class="cm-btn gh sm" type="button" data-c="sample">Add sample media for this category</button><button class="cm-btn gh sm" type="button" data-c="library">Add from media library</button><button class="cm-btn gh sm" type="button" data-c="auto">Auto-organise into sections</button></div>
+   <ul class="cm-media">${med.map(id=>{ const x=mediaOf(id); return `<li>${thumb(id)}<span>${aEsc(x.name)}</span><div><button type="button" class="cm-btn gh xs" data-c="setcover" data-m="${id}" ${x.kind==='video'?'disabled':''}>Cover</button><button type="button" class="cm-btn gh xs" data-c="rmmedia" data-m="${id}" aria-label="Remove ${aEsc(x.name)} from project">Remove</button></div></li>`; }).join('')||'<li class="empty">No media yet.</li>'}</ul></div>
+  <div class="cm-card"><h3>Sections <small>(${p.sections.length})</small></h3><p class="s-hint">Sections appear on the project page in this order. Add as many as you need.</p>
+   <div class="cm-secs">${p.sections.map((s,i)=>secEditor(s,i,p.sections.length,med)).join('')||'<p class="empty">No sections yet. Add one below, or use “Auto-organise”.</p>'}</div>
+   <div class="cm-add"><b>Add a section:</b>${PRESETS.map(([k,l])=>`<button type="button" class="cm-btn gh sm" data-c="addsec" data-l="${k}">+ ${l}</button>`).join('')}</div></div>
+  <p class="cm-note" data-cms-saved></p>`;
+}
+function secEditor(s,i,n,med){
+  const usesMedia=['gallery','carousel','video','split','beforeafter'].includes(s.layout), usesText=['text','gallery','video','split'].includes(s.layout);
+  const pool=med.filter(id=>{ const k=mediaOf(id).kind; return s.layout==='video'?k==='video':(s.layout==='split'||s.layout==='beforeafter')?k==='image':true; });
+  return `<fieldset class="cm-sec" data-sid="${s.id}"><legend>Section ${i+1}</legend>
+   <div class="cm-grid"><div class="cm-f"><label for="t-${s.id}">Section title</label><input id="t-${s.id}" data-sf="title" value="${aEsc(s.title||'')}"></div>
+   <div class="cm-f"><label for="l-${s.id}">Layout</label><select id="l-${s.id}" data-sf="layout">${Object.entries(LAYOUTS).map(([k,l])=>`<option value="${k}" ${k===s.layout?'selected':''}>${l}</option>`).join('')}</select></div></div>
+   ${usesText?`<div class="cm-f"><label for="x-${s.id}">Text</label><textarea id="x-${s.id}" data-sf="text" rows="3">${aEsc(s.text||'')}</textarea></div>`:''}
+   ${s.layout==='list'?`<div class="cm-f"><label for="i-${s.id}">Items (one per line)</label><textarea id="i-${s.id}" data-sf="items" rows="4">${aEsc((s.items||[]).join('\n'))}</textarea></div>`:''}
+   ${usesMedia?`<div class="cm-f"><span class="lab">Media in this section${s.layout==='beforeafter'?' (first = before, second = after)':''}</span><div class="cm-pool">${pool.map(id=>{ const on=(s.media||[]).includes(id); return `<button type="button" class="cm-pm" aria-pressed="${on}" data-c="togglemedia" data-m="${id}" aria-label="${aEsc(mediaOf(id).name)}">${thumb(id)}</button>`; }).join('')||'<span class="s-hint">Upload media to the project first.</span>'}</div></div>`:''}
+   <div class="cm-row"><button type="button" class="cm-btn gh xs" data-c="secup" ${i===0?'disabled':''}>↑ Move up</button><button type="button" class="cm-btn gh xs" data-c="secdown" ${i===n-1?'disabled':''}>↓ Move down</button><button type="button" class="cm-btn gh xs" data-c="secdel">Delete section</button></div></fieldset>`;
+}
+function vSlots(){
+  const D=CMS.data;
+  return `<h2>Site photos</h2><p class="lede">Every photo on the website can be replaced here. Pick any photo or upload a new one — it changes on the site immediately.</p>
+  <ul class="cm-list">${Object.entries(SLOT_INFO).map(([k,[l,w]])=>{ const cur=D.slots[k]||DEFAULT_SLOTS[k]; const hero=k.startsWith('hero-'); return `<li class="col"><div class="cm-slot">${thumb(cur,'xl')}<div><b>${l}</b><small>${w}</small>${hero?`<div class="cm-f"><label for="cap-${k}">Caption on the photo</label><input id="cap-${k}" data-cap="${k}" value="${aEsc(D.slotText[k]||REEL[+k.slice(-1)-1][1])}"></div>`:''}<div class="cm-row"><button type="button" class="cm-btn sm" data-c="pickslot" data-k="${k}">Change photo</button><button type="button" class="cm-btn gh sm" data-c="resetslot" data-k="${k}" ${D.slots[k]?'':'disabled'}>Use original</button></div></div></div></li>`; }).join('')}
+  <li class="col"><div class="cm-slot"><span class="cm-th xl" style="background:linear-gradient(135deg,#E6DEC8,#F3ECE0)"></span><div><b>Project photos</b><small>Each project’s cover and gallery are edited inside the project.</small><div class="cm-row"><button class="cm-btn gh sm" type="button" data-c="view" data-v="projects">Open projects</button></div></div></div></li></ul>`;
+}
+function vHome(){
+  const D=CMS.data;
+  return `<div class="cm-head"><h2>Home sections</h2><button class="cm-btn" type="button" data-c="newhome">+ New home section</button></div><p class="lede">Add new sections to the home page — a featured-projects row, a photo strip, a video, or a text + photo block — and place them wherever you like.</p>
+  <ul class="cm-list">${D.homeSections.map(s=>`<li><button type="button" class="cm-rowbtn" data-c="hedit" data-id="${s.id}"><span><b>${aEsc(s.title)}</b><small>${LAYOUT_H[s.layout]} · after “${(NAV_BASE.find(n=>n[0]===s.after)||[0,s.after])[1]}”</small></span></button>${chip(s.published?'Published':'Draft',s.published?'ok':'')}<button type="button" class="cm-btn gh sm" data-c="delhome" data-id="${s.id}">Delete</button></li>`).join('')||'<li class="empty">No extra sections yet.</li>'}</ul>`;
+}
+const LAYOUT_H = {cards:'Project cards',strip:'Photo & video strip',video:'Video',split:'Text + photo'};
+function vHEdit(){
+  const s=CMS.data.homeSections.find(x=>x.id===A.hid); if(!s) return vHome(); const D=CMS.data;
+  const allMedia=[...Object.keys(BUILTIN_MEDIA),...Object.keys(CMS.media)];
+  return `<div class="cm-head"><button class="cm-btn gh sm" type="button" data-c="view" data-v="home">← All home sections</button></div><h2>Edit home section ${chip(s.published?'Published':'Draft',s.published?'ok':'')}</h2>
+  <div class="cm-card"><div class="cm-grid"><div class="cm-f"><label for="h-title">Title</label><input id="h-title" data-hf="title" value="${aEsc(s.title)}"></div><div class="cm-f"><label for="h-kick">Small heading above title</label><input id="h-kick" data-hf="kicker" value="${aEsc(s.kicker||'')}"></div>
+  <div class="cm-f wide"><label for="h-text">Intro text</label><textarea id="h-text" data-hf="text" rows="2">${aEsc(s.text||'')}</textarea></div>
+  <div class="cm-f"><label for="h-lay">Layout</label><select id="h-lay" data-hf="layout">${Object.entries(LAYOUT_H).map(([k,l])=>`<option value="${k}" ${k===s.layout?'selected':''}>${l}</option>`).join('')}</select></div>
+  <div class="cm-f"><label for="h-after">Place after</label><select id="h-after" data-hf="after">${NAV_BASE.slice(0,5).map(([k,l])=>`<option value="${k}" ${k===s.after?'selected':''}>${l}</option>`).join('')}</select></div></div>
+  ${s.layout==='split'?`<div class="cm-f"><label for="h-body">Text</label><textarea id="h-body" data-hf="body" rows="4">${aEsc(s.body||'')}</textarea></div>`:''}
+  ${s.layout==='cards'?`<div class="cm-f"><span class="lab">Projects to show (leave empty for the latest three)</span><div class="cm-checks">${D.projects.filter(p=>p.published).map(p=>`<label><input type="checkbox" data-hp="${p.id}" ${(s.projectIds||[]).includes(p.id)?'checked':''}> ${aEsc(p.title)}</label>`).join('')}</div></div>`:''}
+  ${s.layout!=='cards'?`<div class="cm-f"><span class="lab">Media</span><div class="cm-pool">${allMedia.filter(id=>s.layout!=='video'||mediaOf(id).kind==='video').map(id=>`<button type="button" class="cm-pm" aria-pressed="${(s.mediaIds||[]).includes(id)}" data-c="hmedia" data-m="${id}" aria-label="${aEsc(mediaOf(id).name)}">${thumb(id)}</button>`).join('')}</div></div>
+  <label class="cm-drop sm"><input type="file" multiple accept="image/*,video/*" data-c="upload"><b>Upload new photos or videos</b></label>`:''}
+  <div class="cm-checks"><label><input type="checkbox" data-hb="inNav" ${s.inNav?'checked':''}> Show in the website menu</label><label><input type="checkbox" data-hb="published" ${s.published?'checked':''}> Published</label></div></div><p class="cm-note" data-cms-saved></p>`;
+}
+function vCats(){
+  const D=CMS.data;
+  return `<h2>Categories</h2><p class="lede">Categories become the filter buttons on the portfolio and home page. Each has a default cover photo, used when a project has none.</p>
+  <ul class="cm-list">${D.cats.map(c=>`<li class="col"><div class="cm-slot">${thumb(c.cover,'lg')}<div><div class="cm-f"><label for="c-${c.id}">Name</label><input id="c-${c.id}" data-cat="${c.id}" value="${aEsc(c.label)}"></div><small>${D.projects.filter(p=>p.cat===c.id).length} project(s)</small><div class="cm-row"><button class="cm-btn gh sm" type="button" data-c="pickcat" data-id="${c.id}">Default cover</button><button class="cm-btn gh sm" type="button" data-c="delcat" data-id="${c.id}">Delete</button></div></div></div></li>`).join('')}</ul>
+  <div class="cm-card"><h3>Add a category</h3><div class="cm-row"><div class="cm-f"><label for="nc">Category name</label><input id="nc" placeholder="e.g. Living rooms"></div><button type="button" class="cm-btn" data-c="addcat">Add category</button></div></div>`;
+}
+function vLib(){
+  const ups=Object.values(CMS.media).sort((a,b)=>b.created-a.created);
+  return `<h2>Media library</h2><p class="lede">Everything you have uploaded, plus the sample photos and videos supplied with the site. Use any of them in any project or section.</p>
+  <label class="cm-drop"><input type="file" multiple accept="image/*,video/*" data-c="upload"><b>Drop photos or videos here</b><span>or click to choose files</span></label>
+  <h3>Your uploads (${ups.length})</h3><ul class="cm-media">${ups.map(m=>`<li>${thumb(m.id)}<span>${aEsc(m.name)}</span><div><button type="button" class="cm-btn gh xs" data-c="dellib" data-m="${m.id}">Delete</button></div></li>`).join('')||'<li class="empty">Nothing uploaded yet.</li>'}</ul>
+  <h3>Sample media (always available)</h3><ul class="cm-media">${Object.values(BUILTIN_MEDIA).map(m=>`<li>${thumb(m.id)}<span>${aEsc(m.name)}</span></li>`).join('')}</ul>`;
+}
+/* ---------- media picker ---------- */
+function openPick(title,ids,cb,multi){
+  const ov=A.d.querySelector('.cms-pick'); A.pick={cb,sel:[],multi};
+  ov.hidden=false; ov.innerHTML=`<div class="box" role="dialog" aria-modal="true" aria-label="${aEsc(title)}"><h3>${aEsc(title)}</h3><div class="cm-pool big">${ids.map(id=>`<button type="button" class="cm-pm" data-c="pk" data-m="${id}" aria-pressed="false" aria-label="${aEsc(mediaOf(id).name)}">${thumb(id)}<small>${aEsc(mediaOf(id).name)}</small></button>`).join('')}</div>
+  <label class="cm-drop sm"><input type="file" multiple accept="image/*,video/*" data-c="pkupload"><b>Upload new</b></label><div class="cm-row"><button type="button" class="cm-btn" data-c="pkok">${multi?'Add selected':'Done'}</button><button type="button" class="cm-btn gh" data-c="pkcancel">Cancel</button></div></div>`;
+  ov.querySelector('button').focus();
+}
+function closePick(){ const ov=A.d.querySelector('.cms-pick'); ov.hidden=true; ov.innerHTML=''; A.pick=null; }
+const imageIds = () => [...Object.keys(BUILTIN_MEDIA).filter(k=>BUILTIN_MEDIA[k].kind==='image'),...Object.values(CMS.media).filter(m=>m.kind==='image').map(m=>m.id)];
+const allIds = () => [...Object.keys(BUILTIN_MEDIA),...Object.keys(CMS.media)];
+/* ---------- events ---------- */
+async function handleFiles(files, target){
+  const list=[...files]; if(!list.length) return; const p=proj(); const ms=await addFiles(list);
+  if(!ms.length){ toast(A.d,'Those files are not photos or videos.'); return; }
+  if(A.view==='edit'&&p){ p.media=[...(p.media||[]),...ms.map(m=>m.id)]; if(!p.cover||CMS.data.cats.find(c=>c.id===p.cat)&&p.cover===CMS.data.cats.find(c=>c.id===p.cat).cover){ const im=ms.find(m=>m.kind==='image'); if(im) p.cover=im.id; } save(); }
+  else if(A.view==='hedit'){ const s=CMS.data.homeSections.find(x=>x.id===A.hid); if(s){ s.mediaIds=[...(s.mediaIds||[]),...ms.map(m=>m.id)]; save(); } }
+  render(); toast(A.d,`${ms.length} file${ms.length===1?'':'s'} added`);
+}
+async function onChange(e){
+  const t=e.target; if(t.type==='file'){ if(t.dataset.c==='pkupload'){ const ms=await addFiles([...t.files]); closePick(); if(A.pick) return; render(); return; } await handleFiles(t.files); t.value=''; return; }
+  const p=proj();
+  if(t.dataset.f==='cat'&&p){ p.cat=t.value; const c=CMS.data.cats.find(x=>x.id===p.cat); if(!p.media.length&&c) p.cover=c.cover; saveSoon(); render(); return; }
+  if(t.dataset.sf==='layout'&&p){ const s=p.sections.find(x=>x.id===t.closest('[data-sid]').dataset.sid); s.layout=t.value; if(t.value==='beforeafter') s.media=(s.media||[]).slice(0,2); save(); render(); return; }
+  if(t.dataset.hf==='layout'||t.dataset.hf==='after'){ const s=CMS.data.homeSections.find(x=>x.id===A.hid); s[t.dataset.hf]=t.value; save(); rebuild(); render(); return; }
+  if(t.dataset.hb){ const s=CMS.data.homeSections.find(x=>x.id===A.hid); s[t.dataset.hb]=t.checked; save(); rebuild(); render(); return; }
+  if(t.dataset.hp){ const s=CMS.data.homeSections.find(x=>x.id===A.hid); s.projectIds=[...A.d.querySelectorAll('[data-hp]')].filter(x=>x.checked).map(x=>x.dataset.hp); saveSoon(); }
+}
+function onInput(e){
+  const t=e.target, p=proj();
+  if(t.dataset.f&&p&&t.dataset.f!=='cat'){ p[t.dataset.f]=t.value; if(t.dataset.f==='title') p.slug=uniqSlug(t.value,p.id); saveSoon(); }
+  else if(t.dataset.sf&&p){ const s=p.sections.find(x=>x.id===t.closest('[data-sid]').dataset.sid); s[t.dataset.sf]=t.dataset.sf==='items'?t.value.split('\n').map(x=>x.trim()).filter(Boolean):t.value; saveSoon(); }
+  else if(t.dataset.hf&&['title','kicker','text','body'].includes(t.dataset.hf)){ const s=CMS.data.homeSections.find(x=>x.id===A.hid); s[t.dataset.hf]=t.value; saveSoon(); }
+  else if(t.dataset.cat){ CMS.data.cats.find(c=>c.id===t.dataset.cat).label=t.value; saveSoon(); }
+  else if(t.dataset.cap){ CMS.data.slotText[t.dataset.cap]=t.value; saveSoon(); }
+}
+function uniqSlug(title,id){ let b=slugify(title),s=b,n=2; while(CMS.data.projects.some(p=>p.slug===s&&p.id!==id)) s=b+'-'+(n++); return s; }
+function onKey(e){ if(e.key==='Escape'){ if(A.pick){ closePick(); e.stopPropagation(); } } }
+function onClick(e){
+  const t=e.target.closest('[data-c]'); if(!t) return; const c=t.dataset.c; if(c==='upload'||c==='pkupload') return; const D=CMS.data, p=proj();
+  if(c==='exit') return closeAdmin();
+  if(c==='view'){ A.view=t.dataset.v; A.pid=null; return render(); }
+  if(c==='reset'){ if(confirm('Reset all demo data? This removes your projects, uploads and changes in this browser.')) CMS.reset().then(()=>{ A.view='dash'; render(); toast(A.d,'Demo data reset'); }); return; }
+  if(c==='newproj'){ const cat=D.cats[0]; const id='p'+uid(); D.projects.unshift({id,slug:uniqSlug('new-project',id),title:'New project',cat:cat.id,loc:'',year:String(new Date().getFullYear()),sum:'',cover:cat.cover,published:false,area:'',dur:'',scope:'',media:[],sections:[]}); A.pid=id; A.view='edit'; save(); return render(); }
+  if(c==='edit'){ A.pid=t.dataset.id; A.view='edit'; return render(); }
+  if(c==='togglepub'){ const q=D.projects.find(x=>x.id===t.dataset.id); q.published=!q.published; save(); rebuild(); render(); return toast(A.d,q.published?'Published — it is live on the website':'Unpublished — hidden from the website'); }
+  if(c==='delproj'){ const q=D.projects.find(x=>x.id===t.dataset.id); if(confirm(`Delete “${q.title}”? Its uploaded files stay in the media library.`)){ D.projects=D.projects.filter(x=>x!==q); save(); rebuild(); render(); } return; }
+  if(c==='viewsite'){ p.published=true; save(); rebuild(); return closeAdmin(p.slug); }
+  if(c==='pickcover') return openPick('Choose a cover photo',imageIds(),ids=>{ p.cover=ids[0]; save(); render(); });
+  if(c==='setcover'){ p.cover=t.dataset.m; save(); return render(); }
+  if(c==='rmmedia'){ const id=t.dataset.m; p.media=p.media.filter(x=>x!==id); p.sections.forEach(s=>{ s.media=(s.media||[]).filter(x=>x!==id); }); if(p.cover===id){ const f=p.media.find(x=>mediaOf(x)&&mediaOf(x).kind==='image'); p.cover=f||(D.cats.find(x=>x.id===p.cat)||{}).cover; } save(); return render(); }
+  if(c==='sample'){ const ids=CAT_SAMPLES[p.cat]||Object.keys(BUILTIN_MEDIA).filter(k=>k[0]==='b'); p.media=[...new Set([...(p.media||[]),...ids])]; save(); render(); return toast(A.d,'Sample media added'); }
+  if(c==='library') return openPick('Add from media library',allIds(),ids=>{ p.media=[...new Set([...(p.media||[]),...ids])]; save(); render(); },true);
+  if(c==='auto'){ autoOrganise(p); save(); render(); return toast(A.d,'Sections created from your media'); }
+  if(c==='addsec'){ const l=t.dataset.l; p.sections.push({id:uid(),layout:l,title:({text:'Overview',gallery:'Gallery',video:'Video walkthrough',carousel:'Highlights',beforeafter:'Before & after',split:'The story',list:'Details'})[l],text:'',items:l==='list'?['First detail']:undefined,media:[]}); save(); render(); const last=A.d.querySelectorAll('.cm-sec'); last[last.length-1].querySelector('input').focus(); return; }
+  if(c==='secup'||c==='secdown'){ const id=t.closest('[data-sid]').dataset.sid, i=p.sections.findIndex(s=>s.id===id), j=c==='secup'?i-1:i+1; [p.sections[i],p.sections[j]]=[p.sections[j],p.sections[i]]; save(); return render(); }
+  if(c==='secdel'){ const id=t.closest('[data-sid]').dataset.sid; p.sections=p.sections.filter(s=>s.id!==id); save(); return render(); }
+  if(c==='togglemedia'){ const s=p.sections.find(x=>x.id===t.closest('[data-sid]').dataset.sid), m=t.dataset.m; s.media=s.media||[]; const i=s.media.indexOf(m); i>=0?s.media.splice(i,1):s.media.push(m); if(s.layout==='beforeafter'&&s.media.length>2) s.media=s.media.slice(-2); save(); return render(); }
+  if(c==='pickslot') return openPick('Choose a photo',imageIds(),ids=>{ D.slots[t.dataset.k]=ids[0]; save(); render(); toast(A.d,'Photo changed — see it on the website'); });
+  if(c==='resetslot'){ delete D.slots[t.dataset.k]; save(); return render(); }
+  if(c==='newhome'){ const id='h'+uid(); D.homeSections.push({id,title:'New section',kicker:'Featured',text:'',layout:'cards',after:'work',projectIds:[],mediaIds:[],body:'',published:false,inNav:false}); A.hid=id; A.view='hedit'; save(); return render(); }
+  if(c==='hedit'){ A.hid=t.dataset.id; A.view='hedit'; return render(); }
+  if(c==='delhome'){ D.homeSections=D.homeSections.filter(x=>x.id!==t.dataset.id); save(); rebuild(); return render(); }
+  if(c==='hmedia'){ const s=D.homeSections.find(x=>x.id===A.hid); s.mediaIds=s.mediaIds||[]; const i=s.mediaIds.indexOf(t.dataset.m); i>=0?s.mediaIds.splice(i,1):s.mediaIds.push(t.dataset.m); save(); return render(); }
+  if(c==='addcat'){ const v=A.d.querySelector('#nc').value.trim(); if(!v) return toast(A.d,'Type a category name first'); let id=slugify(v); while(D.cats.some(x=>x.id===id)) id+='-2'; D.cats.push({id,label:v,cover:'b:board'}); save(); return render(); }
+  if(c==='delcat'){ if(D.projects.some(x=>x.cat===t.dataset.id)) return toast(A.d,'Move or delete this category’s projects first'); if(D.cats.length<2) return toast(A.d,'Keep at least one category'); D.cats=D.cats.filter(x=>x.id!==t.dataset.id); save(); return render(); }
+  if(c==='pickcat') return openPick('Default cover for this category',imageIds(),ids=>{ D.cats.find(x=>x.id===t.dataset.id).cover=ids[0]; save(); render(); });
+  if(c==='dellib'){ const id=t.dataset.m; IDB.del(id); delete CMS.media[id]; D.projects.forEach(q=>{ q.media=(q.media||[]).filter(x=>x!==id); q.sections.forEach(s=>s.media=(s.media||[]).filter(x=>x!==id)); if(q.cover===id) q.cover=(D.cats.find(x=>x.id===q.cat)||{}).cover; }); Object.keys(D.slots).forEach(k=>{ if(D.slots[k]===id) delete D.slots[k]; }); D.homeSections.forEach(h=>h.mediaIds=(h.mediaIds||[]).filter(x=>x!==id)); save(); return render(); }
+  if(c==='pk'){ const m=t.dataset.m; if(A.pick.multi){ const i=A.pick.sel.indexOf(m); i>=0?A.pick.sel.splice(i,1):A.pick.sel.push(m); t.setAttribute('aria-pressed',i<0); } else { A.pick.sel=[m]; A.d.querySelectorAll('.cms-pick .cm-pm').forEach(b=>b.setAttribute('aria-pressed',b===t)); } return; }
+  if(c==='pkok'){ const cb=A.pick.cb, sel=A.pick.sel; closePick(); if(sel.length) cb(sel); return; }
+  if(c==='pkcancel') return closePick();
+}
+function autoOrganise(p){
+  const ms=(p.media||[]).filter(mediaOf); const groups=[['Living room',/living|hall|lounge|sofa/i],['Kitchen & dining',/kitchen|dining|pantry/i],['Bedroom',/bed|master|wardrobe/i],['Bathroom',/bath|toilet|wash/i]];
+  const by={}, videos=[], rest=[]; ms.forEach(id=>{ const m=mediaOf(id); if(m.kind==='video'){ videos.push(id); return; } const g=groups.find(([n,re])=>re.test(m.name)); (g?(by[g[0]]=by[g[0]]||[]):rest).push(id); });
+  const add=(title,layout,media)=>{ if(media.length&&!p.sections.some(s=>s.title===title)) p.sections.push({id:uid(),layout,title,text:'',media}); };
+  Object.entries(by).forEach(([t,m])=>add(t,'gallery',m)); add(Object.keys(by).length?'More photos':'Gallery','gallery',rest); add('Video walkthrough','video',videos);
+}
+
+window.addEventListener('DOMContentLoaded',()=>CMS.ready().then(()=>mountSite(document.getElementById('app'),'home')));</script></body></html>
