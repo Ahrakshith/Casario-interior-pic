@@ -20,6 +20,11 @@
 .reelbox .pz{z-index:3}
 @media (prefers-reduced-motion:reduce){.dev-scroll{scroll-behavior:auto}}
 .adm-l{opacity:.75;font-size:.9em}
+.cms-login{align-items:center;justify-content:center;padding:18px;background:linear-gradient(160deg,#F6F1E8,#E9DFCB);overflow:auto}
+.lg-card{background:#fff;border:1px solid #E4DAC6;border-radius:18px;padding:28px 24px;width:100%;max-width:420px;box-shadow:0 20px 50px rgba(24,21,18,.15)}
+.lg-logo{font:600 14px var(--serif);letter-spacing:.3em;color:#B5832E;margin-bottom:10px}
+.lg-pw{display:flex;gap:8px}.lg-pw input{flex:1}.lg-err{min-height:22px;margin:6px 0;color:#8a3b2e;font-size:14px}
+
 .cms{--serif:'Cormorant Garamond',Georgia,serif;position:absolute;inset:0;z-index:70;background:#F6F1E8;color:#2b2621;display:flex;flex-direction:column;font:15px/1.5 Inter,system-ui,sans-serif}
 .cms *{box-sizing:border-box}
 .cms-top{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#181512;color:#FBF8F3;flex-wrap:wrap}
@@ -908,14 +913,45 @@ const PRESETS = [['text','Overview text'],['gallery','Photo gallery'],['video','
 const VIEWS = [['dash','Dashboard'],['projects','Projects'],['slots','Site photos'],['home','Home sections'],['cats','Categories'],['lib','Media library']];
 const proj = () => CMS.data.projects.find(p=>p.id===A.pid);
 const chip = (t,c) => `<span class="cm-pill ${c||''}">${t}</span>`;
-function openAdmin(d){
+function openAdminUI(d){
   A.d=d; A.view='dash'; A.pid=null; A.hid=null; d.querySelector('.cms')?.remove();
-  d.insertAdjacentHTML('beforeend',`<div class="cms" role="dialog" aria-modal="true" aria-label="Admin space"><header class="cms-top"><b>Admin space</b><span class="cm-demo" data-cms-saved></span><button type="button" class="cm-btn gh" data-c="exit">← Back to website</button></header>
+  d.insertAdjacentHTML('beforeend',`<div class="cms" role="dialog" aria-modal="true" aria-label="Admin space"><header class="cms-top"><b>Admin space</b><span class="cm-demo" data-cms-saved></span><button type="button" class="cm-btn gh" data-c="exit">← Back to website</button><button type="button" class="cm-btn gh" data-c="logout">Sign out</button></header>
   <div class="cms-body"><nav class="cms-nav" aria-label="Admin sections">${VIEWS.map(([k,l])=>`<button type="button" data-c="view" data-v="${k}">${l}</button>`).join('')}<button type="button" class="reset" data-c="reset">Reset demo data</button></nav><main class="cms-main" id="cms-main" tabindex="-1"></main></div><div class="cms-pick" hidden></div></div>`);
   const ov=d.querySelector('.cms'); ov.addEventListener('click',onClick); ov.addEventListener('input',onInput); ov.addEventListener('change',onChange); ov.addEventListener('keydown',onKey);
   ov.addEventListener('dragover',e=>{ if(e.target.closest('.cm-drop')) e.preventDefault(); }); ov.addEventListener('drop',e=>{ const z=e.target.closest('.cm-drop'); if(!z) return; e.preventDefault(); handleFiles(e.dataTransfer.files); });
   setBg(d,true); render(); const s=d.querySelector('[data-cms-saved]'); s.textContent=CMS.persist?'Demo: changes are saved in this browser':'Storage is blocked — changes last for this tab only';
   ov.querySelector('#cms-main').focus();
+}
+
+/* ---------- sign-in gate (server-verified; see api/auth.js) ---------- */
+async function authCheck(){
+  try{ const r=await fetch('/api/auth?a=session',{credentials:'same-origin',cache:'no-store'});
+    if(r.status===200) return {ok:true}; if(r.status===401) return {ok:false}; if(r.status===503) return {ok:false,err:'not_configured'}; return {ok:false,err:'unavailable'}; }
+  catch(e){ return {ok:false,err:'unavailable'}; }
+}
+const LG_MSG = {invalid:'Email or password is incorrect.',too_many:'Too many attempts. Please wait a few minutes and try again.',not_configured:'Admin sign-in has not been set up yet. The site owner needs to add the admin email and password in the hosting settings.',unavailable:'Sign-in is not available here. Open the live website to sign in.'};
+async function openAdmin(d){
+  A.d=d; const s=await authCheck(); if(s.ok) return openAdminUI(d); showLogin(d,s.err);
+}
+function showLogin(d,err){
+  d.querySelector('.cms')?.remove();
+  d.insertAdjacentHTML('beforeend',`<div class="cms cms-login" role="dialog" aria-modal="true" aria-labelledby="lg-t"><div class="lg-card"><div class="lg-logo" aria-hidden="true">CASARIO</div><h2 id="lg-t">Admin sign in</h2><p class="lede">Sign in to manage projects, photos and sections.</p>
+  <form id="lg-f" novalidate><div class="cm-f"><label for="lg-e">Email</label><input id="lg-e" name="email" type="email" autocomplete="username" required></div>
+  <div class="cm-f"><label for="lg-p">Password</label><div class="lg-pw"><input id="lg-p" name="password" type="password" autocomplete="current-password" required><button type="button" class="cm-btn gh sm" data-lg="show" aria-pressed="false">Show</button></div></div>
+  <p class="lg-err" role="alert" aria-live="assertive">${err?LG_MSG[err]:''}</p>
+  <div class="cm-row"><button class="cm-btn" type="submit" ${err==='not_configured'||err==='unavailable'?'':''}>Sign in</button><button type="button" class="cm-btn gh" data-lg="cancel">Back to website</button></div></form></div></div>`);
+  const ov=d.querySelector('.cms'); setBg(d,true); const f=ov.querySelector('#lg-f'), er=ov.querySelector('.lg-err'), em=ov.querySelector('#lg-e'), pw=ov.querySelector('#lg-p');
+  const leave=()=>{ ov.remove(); setBg(d,false); const sc=scroller(d); if(sc) sc.focus&&sc.focus(); };
+  ov.addEventListener('click',e=>{ const t=e.target.closest('[data-lg]'); if(!t) return; if(t.dataset.lg==='cancel') leave(); else { const on=pw.type==='password'; pw.type=on?'text':'password'; t.textContent=on?'Hide':'Show'; t.setAttribute('aria-pressed',on); } });
+  ov.addEventListener('keydown',e=>{ if(e.key==='Escape'){ e.stopPropagation(); leave(); } else if(e.key==='Tab') trap(e,ov); });
+  f.addEventListener('submit',async e=>{ e.preventDefault(); er.textContent=''; if(!em.value.trim()||!pw.value){ er.textContent='Enter your email and password.'; (em.value.trim()?pw:em).focus(); return; }
+    const btn=f.querySelector('[type=submit]'); btn.disabled=true; btn.textContent='Signing in…';
+    try{ const r=await fetch('/api/auth?a=login',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em.value,password:pw.value})});
+      if(r.status===200){ ov.remove(); setBg(d,false); return openAdminUI(d); }
+      er.textContent=LG_MSG[r.status===401?'invalid':r.status===429?'too_many':r.status===503?'not_configured':'unavailable']; if(r.status===401){ pw.value=''; pw.focus(); } }
+    catch(x){ er.textContent=LG_MSG.unavailable; }
+    btn.disabled=false; btn.textContent='Sign in'; });
+  em.focus();
 }
 function closeAdmin(toProject){
   const d=A.d; d.querySelector('.cms')?.remove(); setBg(d,false); save(); rebuild();
@@ -1057,6 +1093,7 @@ function onKey(e){ if(e.key==='Escape'){ if(A.pick){ closePick(); e.stopPropagat
 function onClick(e){
   const t=e.target.closest('[data-c]'); if(!t) return; const c=t.dataset.c; if(c==='upload'||c==='pkupload') return; const D=CMS.data, p=proj();
   if(c==='exit') return closeAdmin();
+  if(c==='logout'){ fetch('/api/auth?a=logout',{method:'POST',credentials:'same-origin'}).catch(()=>{}).finally(()=>{ closeAdmin(); toast(A.d,'Signed out'); }); return; }
   if(c==='view'){ A.view=t.dataset.v; A.pid=null; return render(); }
   if(c==='reset'){ if(confirm('Reset all demo data? This removes your projects, uploads and changes in this browser.')) CMS.reset().then(()=>{ A.view='dash'; render(); toast(A.d,'Demo data reset'); }); return; }
   if(c==='newproj'){ const cat=D.cats[0]; const id='p'+uid(); D.projects.unshift({id,slug:uniqSlug('new-project',id),title:'New project',cat:cat.id,loc:'',year:String(new Date().getFullYear()),sum:'',cover:cat.cover,published:false,area:'',dur:'',scope:'',media:[],sections:[]}); A.pid=id; A.view='edit'; save(); return render(); }
